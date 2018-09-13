@@ -257,7 +257,6 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
 }
 
 #' @export
-dbExtract_init()
 dbExtract_init<-function(){
   dir.create("raw")}
 
