@@ -1,0 +1,3 @@
+path,type,sheet,stationID,latitude,longitude,lineSkip
+raw\stations\PWQMN1.xlsx,xlsx,,STATION,LATITUDE,LONGITUDE,0
+raw\stations\Water-Qual-Eau-Sites-National.csv,csv,,SITE_NO,LATITUDE,LONGITUDE,0
