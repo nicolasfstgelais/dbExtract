@@ -1,4 +1,4 @@
-#' dbExplore main function
+#' dbEtract main function
 #'
 #' This function is designed to explore databases and summarize
 #' the spatial and temporal coverage of pre-selected varaibles (need to fill the input.xls file)
@@ -11,9 +11,7 @@
 #' @keywords cats
 #' @export
 #' @examples
-#' dbSurvey ()
-i=1
-
+#' dbExtract ()
 dbExtract<- function(inputFile = "../raw/inputs/dbInputs.csv",catFile="../raw/inputs/categories.csv",output="dbExtractOutput")
 {
 
