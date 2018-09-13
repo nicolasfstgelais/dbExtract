@@ -256,5 +256,9 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
   return(dbMerged)
 }
 
+#' @export
+dbExtract_init()
+dbExtract_init<-function(){
+  dir.create("raw")}
 
 

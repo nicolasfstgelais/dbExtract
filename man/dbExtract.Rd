@@ -2,7 +2,7 @@
 % Please edit documentation in R/dbExtract.R
 \name{dbExtract}
 \alias{dbExtract}
-\title{dbEtract main function}
+\title{dbExtract main function}
 \usage{
 dbExtract(inputFile = "dbInput.csv", catFile = "categories.csv",
   output = "dbExtractOutput")
