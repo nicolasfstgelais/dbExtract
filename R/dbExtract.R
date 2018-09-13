@@ -12,16 +12,16 @@
 #' @export
 #' @examples
 #' dbExtract ()
-dbExtract<- function(inputFile = "../raw/inputs/dbInputs.csv",catFile="../raw/inputs/categories.csv",output="dbExtractOutput")
+dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="dbExtractOutput")
 {
 
   # inputs----
 
   # input
-  input = LtoC(read.csv(paste0("../raw/inputs/",inputFile),na.strings = ""))
+  input = LtoC(read.csv(paste0("inputs/",inputFile),na.strings = ""))
 
   #input categories to identified should also be a csv
-  categories = LtoC(read.csv(paste0("../raw/inputs/",catFile),na.strings = ""))
+  categories = LtoC(read.csv(paste0("inputs/",catFile),na.strings = ""))
 
 
 
@@ -47,7 +47,7 @@ dbExtract<- function(inputFile = "../raw/inputs/dbInputs.csv",catFile="../raw/in
     # time the loop
 
     #log input
-    fileName=paste0("../logs/",as.character(Sys.Date()),".log")
+    fileName=paste0("logs/",as.character(Sys.Date()),".log")
     cat(as.character(Sys.time()), file=fileName, append=T, sep = "\n")
 
 
