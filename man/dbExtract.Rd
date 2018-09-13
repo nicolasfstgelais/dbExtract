@@ -4,8 +4,8 @@
 \alias{dbExtract}
 \title{dbEtract main function}
 \usage{
-dbExtract(inputFile = "../raw/inputs/dbInputs.csv",
-  catFile = "../raw/inputs/categories.csv", output = "dbExtractOutput")
+dbExtract(inputFile = "dbInput.csv", catFile = "categories.csv",
+  output = "dbExtractOutput")
 }
 \arguments{
 \item{inputFile}{inputFile filename, needs to be in the working directory}

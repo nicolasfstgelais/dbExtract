@@ -1,4 +1,4 @@
-#' dbEtract main function
+#' dbExtract main function
 #'
 #' This function is designed to explore databases and summarize
 #' the spatial and temporal coverage of pre-selected varaibles (need to fill the input.xls file)
