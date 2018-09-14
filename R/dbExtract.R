@@ -258,9 +258,10 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
 
 #' @export
 dbExtract_init<-function(){
-  dir.create("raw")
+  dir.create("raw/")
+  dir.create("raw/stations")
   stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/stations.csv")))
-  write.csv(stations,"stations.csv")
+  write.csv(stations,"raw/stations/stations.csv")
   }
 
 
