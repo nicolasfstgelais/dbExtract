@@ -1,300 +1,300 @@
-SuperCategory,Category,System,Pollutant,CAS,Chemical.groups,Concentration,Units,Limit,Date,Reference,Notes
-irrigation,irrigation,,Aldicarb,116063,Pesticide,54.9,ug/L,lower,1993,,
-irrigation,irrigation,,Aluminium ,,Metal,5000,ug/L,lower,1987,,
-irrigation,irrigation,,arsenic,,Metal,100,ug/L,upper,1997,,
-irrigation,irrigation,,atrazine,1912249,Pesticide,10,ug/L,upper,1989,,
-irrigation,irrigation,,Beryllium ,,Metal,100,ug/L,upper,1987,,
-irrigation,irrigation,,Bromacil,314409,Pesticide,0.2,ug/L,upper,1997,,
-irrigation,irrigation,,Bromoxynil,,Pesticide,0.33,ug/L,upper,1993,,
-irrigation,irrigation,,cadmium,7440439,Metal,5.1,ug/L,upper,1996,,
-irrigation,irrigation,,Chlorothalonil,1897456,Pesticide,5.8,ug/L,upper,1994,,(other crops) 
-irrigation,irrigation,,"Chromium, hexavalent (Cr(VI))",7440473,Metal,8,ug/L,upper,1997,,
-irrigation,irrigation,,"Chromium, trivalent (Cr(III))",7440473,Metal,4.9,ug/L,upper,1997,,
-irrigation,irrigation,,Cobalt ,,Metal,50,ug/L,upper,1987,,
-irrigation,irrigation,,E.coli,,Biological,100,per 100 mL ,upper,1987,,
-irrigation,irrigation,,Total coliforms ,,Biological,1000,per 100 mL ,upper,1987,,
-irrigation,irrigation,,Cyanazine,2175462,Pesticide,0.5,ug/L,upper,1990,,
-irrigation,irrigation,,Dicamba,1918009,Pesticide,0.025,ug/L,upper,1993,CCME,"2.5 times the detection limit, value of 0.006 µg?L-1 is recommended as the overall Canadian water quality guideline for irrigation "
-irrigation,irrigation,,Diclofop-methyl,51338273,Pesticide,0.18,ug/L,upper,1993,,
-irrigation,irrigation,,Diisopropanolamine,110974,Organic chemical,2000,ug/L,upper,2006,,
-irrigation,irrigation,,Dinoseb,88857,Pesticide,16,ug/L,upper,1992,,
-irrigation,irrigation,,Fluoride ,,Inorganic chemical,1000,ug/L,upper,1987,,
-irrigation,irrigation,,iron ,,Metal,5000,ug/L,upper,1987,,
-irrigation,irrigation,,lead,,Metal,200,ug/L,upper,1987,,
-irrigation,irrigation,,Linuron,,Pesticide,0.071,ug/L,upper,1995,,
-irrigation,irrigation,,Lithium ,,Metal,2500,ug/L,upper,1987,,
-irrigation,irrigation,,Manganese ,,Metal,200,ug/L,upper,1987,,
-irrigation,irrigation,,Methylchlorophenoxyacetic acid ,94746,Pesticide,0.025,ug/L,upper,1995,,
-irrigation,irrigation,,Metolachlor,51218452,Pesticide,28,ug/L,upper,1991,,
-irrigation,irrigation,,Metribuzin,21087649,Pesticide,0.5,ug/L,upper,1990,,
-irrigation,irrigation,,nickel ,,Metal,200,ug/L,upper,1987,,
-irrigation,irrigation,,Simazine,122349,Pesticide,0.5,ug/L,upper,1991,,
-irrigation,irrigation,,SulfolaneBondelane,126330,Organic chemical,500,ug/L,upper,2005,,
-irrigation,irrigation,,Tebuthiuron,34014181,Pesticide,0.27,ug/L,upper,1995,,"(cereals, tame hays, and pastures) "
-irrigation,irrigation,,uranium, 7440-61-1,Metal,10,ug/L,upper,1987,,
-irrigation,irrigation,,Vanadium ,,Metal,100,ug/L,upper,1987,,
-livestock,livestock,,"1,1,2-Trichloroethene", 79-01-6,Organic chemical,50,ug/L,upper,1991,,
-livestock,livestock,,"1,2-Dichloroethane",1070602,Organic chemical,5,ug/L,upper,1991,,
-livestock,livestock,,Aldicarb,116063,Pesticide,11,ug/L,upper,1993,,
-livestock,livestock,,Aluminium ,,Metal,5000,ug/L,upper,1987,,
-livestock,livestock,,arsenic,,Metal,25,ug/L,upper,1997,,
-livestock,livestock,,atrazine,1912249,Pesticide,5,ug/L,upper,1989,,
-livestock,livestock,,Beryllium ,,Metal,100,ug/L,upper,1987,,
-livestock,livestock,,Boron ,,Metal,5000,ug/L,upper,1987,,
-livestock,livestock,,Bromacil,314409,Pesticide,1100,ug/L,upper,1997,,
-livestock,livestock,,Bromoxynil,,Pesticide,11,ug/L,upper,1993,,
-livestock,livestock,,cadmium,7440439,Metal,80,ug/L,upper,1996,,
-livestock,livestock,,Calcium ,,Metal,1000000,ug/L,upper,1987,,
-livestock,livestock,,Captan,133062,Pesticide,13,ug/L,upper,1991,,
-livestock,livestock,,Carbaryl,63252,Pesticide,1100,ug/L,upper,1997,,
-livestock,livestock,,Carbofuran,1564662,Pesticide,45,ug/L,upper,1989,,
-livestock,livestock,,Chlordane,,Pesticide,7,ug/L,upper,1987,,
-livestock,livestock,,Chlorothalonil,1897456,Pesticide,170,ug/L,upper,1994,,
-livestock,livestock,,Chlorpyrifos,2921882,Pesticide,24,ug/L,upper,1997,,
-livestock,livestock,,"Chromium, hexavalent (Cr(VI))",7440473,Metal,50,ug/L,upper,1997,,
-livestock,livestock,,"Chromium, trivalent (Cr(III))",7440473,Metal,50,ug/L,upper,1997,,
-livestock,livestock,,Cobalt ,,Metal,1000,ug/L,upper,1987,,
-livestock,livestock,,Cyanazine,2175462,Pesticide,10,ug/L,upper,1990,,
-livestock,livestock,,Deltamethrin,52918635,Pesticide,2.5,ug/L,upper,1997,,
-livestock,livestock,,Dibromochloromethane,,Organic chemical,100,ug/L,upper,1992,,
-livestock,livestock,,Dicamba,1918009,Pesticide,122,ug/L,upper,1993,,
-livestock,livestock,,Dichloro diphenyl trichloroethane,,Pesticide,30,ug/L,upper,1987,,
-livestock,livestock,,Dichlorobromomethane,,Organic chemical,100,ug/L,upper,1992,,
-livestock,livestock,,Dichloromethane,75092,Organic chemical,50,ug/L,upper,1992,,
-livestock,livestock,,Diclofop-methyl,51338273,Pesticide,9,ug/L,upper,1993,,
-livestock,livestock,,Dimethoate,60515,Pesticide,3,ug/L,upper,1993,,
-livestock,livestock,,Dinoseb,88857,Pesticide,150,ug/L,upper,1992,,
-livestock,livestock,,Endrin,,Pesticide,0.2,ug/L,upper,1987,,
-livestock,livestock,,Ethylbenzene,100414,Organic chemical,2.4,ug/L,upper,1996,,
-livestock,livestock,,Glyphosate,1071836,Pesticide,280,ug/L,upper,1989,,
-livestock,livestock,,Heptachlor,,Pesticide,3,ug/L,upper,1987,,
-livestock,livestock,,Hexachlorobenzene,,Organic chemical,0.52,ug/L,upper,1991,,
-livestock,livestock,,Hexachlorocyclohexane,,Pesticide,4,ug/L,upper,1987,,
-livestock,livestock,,lead,,Metal,100,ug/L,upper,1987,,
-livestock,livestock,,Mercury,7439976,Metal,3,ug/L,upper,1987,,
-livestock,livestock,,Methylchlorophenoxyacetic acid ,94746,Pesticide,25,ug/L,upper,1995,,
-livestock,livestock,,Metolachlor,51218452,Pesticide,50,ug/L,upper,1991,,
-livestock,livestock,,Metribuzin,21087649,Pesticide,80,ug/L,upper,1990,,
-livestock,livestock,,Molybdenum ,,Metal,500,ug/L,upper,1987,,
-livestock,livestock,,nickel ,,Metal,1000,ug/L,upper,1987,,
-livestock,livestock,,Nitrate + Nitrite ,,Inorganic chemical,100000,ug/L,upper,1987,,NO +NO -N 3 2
-livestock,livestock,,Nitrite ,,Inorganic chemical,10000,ug/L,upper,1987,, NO -N 
-livestock,livestock,,Phenols (mono- & dihydric),108952,Organic chemical,2,ug/L,upper,1987,,
-livestock,livestock,,"Phenoxy herbicides2,4 D; 2,4-Dichlorophenoxyacetic acid",,Pesticide,100,ug/L,upper,1987,,
-livestock,livestock,,Picloram,1918021,Pesticide,190,ug/L,upper,1990,,
-livestock,livestock,,Selenium ,,Metal,50,ug/L,upper,1987,,
-livestock,livestock,,Simazine,122349,Pesticide,10,ug/L,upper,1991,,
-livestock,livestock,,Sulphate ,,Inorganic chemical,1000000,ug/L,upper,1987,,
-livestock,livestock,,Tebuthiuron,34014181,Pesticide,130,ug/L,upper,1995,,
-livestock,livestock,,TetrachloromethaneCarbon tetrachloride,56235,Organic chemical,5,ug/L,upper,1992,,
-livestock,livestock,,Toluene,108883,Organic chemical,24,ug/L,upper,1996,,
-livestock,livestock,,Total dissolved solids (salinity),,Inorganic chemical,3000000,ug/L,upper,1987,,chemical group?
-livestock,livestock,,Toxaphene,,Pesticide,5,ug/L,upper,1987,,
-livestock,livestock,,Triallate,2303175,Pesticide,230,ug/L,upper,1992,,
-livestock,livestock,,Tribromomethane,,Organic chemical,100,ug/L,upper,1992,,
-livestock,livestock,,Tributyltin ,,Organic chemical,250,ug/L,upper,1992,,
-livestock,livestock,,Trichloromethane,67663,Organic chemical,100,ug/L,upper,1992,,
-livestock,livestock,,Tricyclohexyltin ,,Organic chemical,250,ug/L,upper,1992,,
-livestock,livestock,,Trifluralin,1582098,Pesticide,45,ug/L,upper,1992,,
-livestock,livestock,,Triphenyltin ,,Organic chemical,820,ug/L,upper,1992,,
-livestock,livestock,,uranium, 7440-61-1,Metal,200,ug/L,upper,1987,,
-livestock,livestock,,Vanadium ,,Metal,100,ug/L,upper,1987,,
-livestock,livestock,,zinc ,,Metal,50000,ug/L,upper,1987,,
-drink,drink,,Antimony,,Metal,0.006,mg/L,upper,1997,,
-drink,drink,,arsenic,,Metal,0.01,mg/L,upper,2006,,
-drink,drink,,atrazine,,Pesticide,0.005,mg/L,upper,1993,,
-drink,drink,,Azinphos-methyl,,Pesticide,0.02,mg/L,upper,2005,,
-drink,drink,,Barium,,Metal,1,mg/L,upper,1990,,
-drink,drink,,Benzene,,Organic chemical,0.005,mg/L,upper,2009,,
-drink,drink,,Benzo(a)pyrene,,Organic chemical,0.00004,mg/L,upper,2016,,
-drink,drink,,Boron ,,Metal,5,mg/L,upper,1990,,
-drink,drink,,Bromate,,Disinfectant & BP,0.01,mg/L,upper,1998,,
-drink,drink,,Bromoxynil,,Pesticide,0.005,mg/L,upper,2005,,
-drink,drink,,cadmium,,Metal,0.005,mg/L,upper,2005,,
-drink,drink,,Carbaryl,,Pesticide,0.09,mg/L,upper,2005,,
-drink,drink,,Carbofuran,,Pesticide,0.09,mg/L,upper,2005,,
-drink,drink,,Carbon tetrachlorid,,Organic chemical,0.002,mg/L,upper,2010,,
-drink,drink,,Chloramines,,Disinfectant & BP,3,mg/L,upper,1995,,
-drink,drink,,Chlorate,,Disinfectant & BP,1,mg/L,upper,2008,,
-drink,drink,,Chlorite,,Disinfectant & BP,1,mg/L,upper,2008,,
-drink,drink,,Chlorpyrifos,,Pesticide,0.09,mg/L,upper,1986,,
-drink,drink,,Chromium,,Metal,0.05,mg/L,upper,1986,,
-drink,drink,,Cyanide,,Inorganic chemical,0.2,mg/L,upper,1991,,
-drink,drink,,Microcystin,,Organic chemical,0.0015,mg/L,upper,2002,,Microcystin-LR
-drink,drink,,Diazinon,,Pesticide,0.02,mg/L,upper,2005,,
-drink,drink,,Dicamba,,Pesticide,0.12,mg/L,upper,2005,,
-drink,drink,,"1,2- Dichlorobenzene",,Organic chemical,0.2,mg/L,upper,1987,,
-drink,drink,,"1,4- Dichlorobenzene",,Organic chemical,0.005,mg/L,upper,1987,,
-drink,drink,,"1,2-Dichloroethane",,Organic chemical,0.005,mg/L,upper,2014,,
-drink,drink,,"1,1- Dichloroethylene",,Organic chemical,0.014,mg/L,upper,1994,,
-drink,drink,,Dichloromethane,,Organic chemical,0.05,mg/L,upper,2011,,
-drink,drink,,"2,4-Dichlorophenol",,Organic chemical,chemical,mg/L,upper,2005,,
-drink,drink,,"2,4- Dichlorophenoxy acetic acid (2,4-D)",,Pesticide,0.1,mg/L,upper,1991,,
-drink,drink,,Diclofop-methyl,,Pesticide,0.009,mg/L,upper,2005,,
-drink,drink,,Dimethoate,,Pesticide,0.02,mg/L,upper,2005,,
-drink,drink,,Diquat,,Pesticide,0.07,mg/L,upper,2005,,
-drink,drink,,Diuron,,Pesticide,0.15,mg/L,upper,2005,,
-drink,drink,,Ethylbenzene,,Organic chemical,0.14,mg/L,upper,2014,,
-drink,drink,,Fluoride ,,Inorganic chemical,1.5,mg/L,upper,2010,,
-drink,drink,,Glyphosate,,Pesticide,0.28,mg/L,upper,2005,,
-drink,drink,,Haloacetic acids – Total (HAAs),,Disinfectant & BP,0.08,mg/L,upper,2008,,
-drink,drink,,lead,,Metal,0.01,mg/L,upper,1992,,
-drink,drink,,Malathion,,Pesticide,0.19,mg/L,upper,2005,,
-drink,drink,,Mercury,,Metal,0.001,mg/L,upper,1986,,
-drink,drink,,2-Methyl-4- chlorophenoxyacetic acid,,Pesticide,0.1,mg/L,upper,2010,,
-drink,drink,,Metolachlor,,Pesticide,0.05,mg/L,upper,1986,,
-drink,drink,,Metribuzin,,Pesticide,0.08,mg/L,upper,2005,,
-drink,drink,,Monochlorobenzene,,Organic chemical,0.08,mg/L,upper,1987,,
-drink,drink,,nitrate,,Inorganic chemical,45,mg/L,upper,2013,,45 as nitrate; 10 as nitratenitrogen
-drink,drink,,Nitrilotriacetic acid,,Inorganic chemical,0.4,mg/L,upper,1990,,
-drink,drink,,Nitrite ,,Inorganic chemical,3,mg/L,upper,2013,,3 as nitrite; 1 as nitritenitrogen
-drink,drink,,N-Nitroso dimethylamine,,Disinfectant & BP,0.00004,mg/L,upper,2013,,
-drink,drink,,Paraquat (dichloride),,Pesticide,0.01,mg/L,upper,2005,,
-drink,drink,,Paraquat (ion),,Pesticide,0.007,mg/L,upper,2005,,
-drink,drink,,Pentachlorophenol,,Organic chemical,0.06,mg/L,upper,2005,,
-drink,drink,,Phorate,,Pesticide,0.002,mg/L,upper,2005,,
-drink,drink,,Picloram,,Pesticide,0.19,mg/L,upper,2005,,
-drink,drink,,Selenium ,,Metal,0.05,mg/L,upper,2014,,
-drink,drink,,Simazine,,Pesticide,0.01,mg/L,upper,1986,,
-drink,drink,,Terbufos,,Pesticide,0.001,mg/L,upper,2005,,
-drink,drink,,Tetrachloroethylene,,Organic chemical,0.01,mg/L,upper,2015,,
-drink,drink,,"2,3,4,6- Tetrachlorophenol",,Organic chemical,0.1,mg/L,upper,2005,,
-drink,drink,,Toluene,,Organic chemical,0.06,mg/L,upper,2014,,
-drink,drink,,Trichloroethylene,,Organic chemical,0.005,mg/L,upper,2005,,
-drink,drink,,"2,4,6- Trichlorophenol",,Organic chemical,0.005,mg/L,upper,2005,,
-drink,drink,,Trifluralin,,Pesticide,0.045,mg/L,upper,2005,,
-drink,drink,,Trihalomethanes,,Disinfectant & BP,0.1,mg/L,upper,2006,,
-drink,drink,,uranium,,Metal,0.02,mg/L,upper,1999,,
-drink,drink,,Vinyl chloride,,Organic chemical,0.002,mg/L,upper,2013,,
-drink,drink,,Xylenes,,Organic chemical,0.09,mg/L,upper,2014,,Total
-drink,drink,,Enteric protozoa,,Biological,,,upper,2012,,
-drink,drink,,Total coliforms ,,Biological,25,per 100 mL ,upper,2011,,Guideline:Treatment goal: Minimum 3 log removal and/or inactivation of cysts and oocysts
-drink,drink,,E.coli,,Biological,25,per 100 mL ,upper,2012,,"the real guideline is >0, but the detection limit is between 4 and 10"
-drink,drink,,Enteric viruses ,,Biological,,,upper,2011,,
-drink,drink,,turbidity,,Physical,0.1,NTU,upper,2012,,"Conventional and direct filtration: ? 0.3 NTU, slow sand and diatomaceous earth filtration: ? 1.0 NTU, slow sand and diatomaceous earth filtration: ? 1.0 NTU"
-aquatic,aquatic,,arsenic,,Metal,5,ug/L,upper,1997,,
-aquatic,aquatic,,atrazine,,Pesticide,1.8,ug/L,upper,1989,,membrane filtration: ? 0.1 NTU
-aquatic,aquatic,,cadmium,,Metal,0.09,ug/L,upper,2014,,
-aquatic,aquatic,,lead,,Metal,1,ug/L,upper,1987,,Equation
-aquatic,aquatic,,uranium,,Metal,15,ug/L,upper,2011,,
-aquatic,aquatic,,chloride,,Inorganic chemical,120000,ug/L,upper,2011,,
-aquatic,aquatic,,copper,,Metal,2,ug/L,upper,1987,,
-aquatic,aquatic,,molybdenum,,Metal,73,ug/L,upper,1999,,
-aquatic,aquatic,,nickel ,,Metal,25,ug/L,upper,1987,,
-aquatic,aquatic,,nitrate,,Inorganic chemical,13000,ug/L,upper,2012,,
-aquatic,aquatic,,zinc ,,Metal,30,ug/L,upper,1987,,
-aquatic,aquatic,,iron ,,Metal,300,ug/L,upper,1987,,
-aquatic,aquatic,,"1,1,2,2- Tetrachloroethene",,Organic chemical,110,ug/L,upper,1993,,
-aquatic,aquatic,,"1,2,3,4-Tetrachlorobenzene",,Organic chemical,1.8,ug/L,upper,1997,,
-aquatic,aquatic,,"1,1,2-Trichloroethene",,Organic chemical,21,ug/L,upper,1991,,
-aquatic,aquatic,,"1,2,3-Trichlorobenzene",,Organic chemical,8,ug/L,upper,1997,,
-aquatic,aquatic,,"1,2,4-Trichlorobenzene",,Organic chemical,24,ug/L,upper,1997,,
-aquatic,aquatic,,"1,2-Dichlorobenzene",,Organic chemical,0.7,ug/L,upper,1997,,
-aquatic,aquatic,,"1,2-Dichloroethane",,Organic chemical,100,ug/L,upper,1991,,
-aquatic,aquatic,,"1,3-Dichlorobenzene",,Organic chemical,150,ug/L,upper,1997,,
-aquatic,aquatic,,"1,4-Dichlorobenzene",,Organic chemical,26,ug/L,upper,1997,,
-aquatic,aquatic,,3-Iodo-2-propynyl butyl carbamate,,Organic chemical,1.9,ug/L,upper,1999,,
-aquatic,aquatic,,Acenaphthene,,Organic chemical,5.8,ug/L,upper,1999,,
-aquatic,aquatic,,Acridine,,Organic chemical,4.4,ug/L,upper,1999,,
-aquatic,aquatic,,Aldicarb,116063,Pesticide,1,ug/L,upper,1993,,
-aquatic,aquatic,,Aluminium,,Metal,5,ug/L,upper,1993,,5 µg/L if pH < 6.5;100 µg/L if pH ? 6.5
-aquatic,aquatic,,Ammonia (total),,Organic chemical,0.021,mg/L,upper,2001,,"minium, table"
-aquatic,aquatic,,Ammonia (un-ionized),,Organic chemical,19,ug/L,upper,2001,,
-aquatic,aquatic,,Aniline,,Organic chemical,2.2,ug/L,upper,1993,,
-aquatic,aquatic,,Anthracene,,Organic chemical,0.012,ug/L,upper,1999,,
-aquatic,aquatic,,Benz(a)anthracene,,Organic chemical,0.018,ug/L,upper,1999,,
-aquatic,aquatic,,Benzene,,Organic chemical,370,ug/L,upper,1999,,
-aquatic,aquatic,,Benzo(a)pyrene,,Organic chemical,0.015,ug/L,upper,1999,,
-aquatic,aquatic,,Boron ,,Metal,15000,ug/L,upper,2009,,
-aquatic,aquatic,,Bromacil,,Pesticide,5,ug/L,upper,1999,,
-aquatic,aquatic,,Bromoxynil,,Pesticide,5,ug/L,upper,1993,,
-aquatic,aquatic,,Captan,,Pesticide,1.3,ug/L,upper,1991,,
-aquatic,aquatic,,Carbaryl,,Pesticide,0.2,ug/L,upper,2009,,
-aquatic,aquatic,,Carbofuran,,Pesticide,1.8,ug/L,upper,1989,,
-aquatic,aquatic,,Chlorothalonil,,Pesticide,0.18,ug/L,upper,1994,,
-aquatic,aquatic,,Chlorpyrifos,,Pesticide,0.002,ug/L,upper,2008,,
-aquatic,aquatic,,"Chromium, hexavalent (Cr(VI))",,Metal,1,ug/L,upper,1997,,
-aquatic,aquatic,,"Chromium, trivalent (Cr(III))",,Metal,8.9,ug/L,upper,1997,,
-aquatic,aquatic,,Cyanide,,Inorganic chemical,5,ug/L,upper,1987,,as free CN
-aquatic,aquatic,,Cyanazine,,Pesticide,2,ug/L,upper,1990,,
-aquatic,aquatic,,Deltamethrin,,Pesticide,0.0004,ug/L,upper,1997,,
-aquatic,aquatic,,Di(2-ethylhexyl) phthalate,,Organic chemical,16,ug/L,upper,1993,,
-aquatic,aquatic,,Di-n-butyl phthalate,,Organic chemical,19,ug/L,upper,1993,,
-aquatic,aquatic,,Dicamba,,Pesticide,10,ug/L,upper,1993,,
-aquatic,aquatic,,Dichloromethane,,Organic chemical,98.1,ug/L,upper,1992,,
-aquatic,aquatic,,Dichlorophenols,,Organic chemical,0.2,ug/L,upper,1987,,
-aquatic,aquatic,,Diclofop-methyl,,Pesticide,6.1,ug/L,upper,1993,,
-aquatic,aquatic,,Didecyl dimethyl ammonium chloride,,Pesticide,1.5,ug/L,upper,1999,,
-aquatic,aquatic,,Diisopropanolamine,,Organic chemical,1600,ug/L,upper,2005,,
-aquatic,aquatic,,Dimethoate,,Pesticide,6.2,ug/L,upper,1993,,
-aquatic,aquatic,,Dinoseb,,Pesticide,0.05,ug/L,upper,1992,,
-aquatic,aquatic,,Dissolved oxygen,,Inorganic chemical, 5500,ug/L,upper,1999,,"minimum, variable"
-aquatic,aquatic,,Endosulfan,,Pesticide,0.003,ug/L,upper,2010,,
-aquatic,aquatic,,Ethylbenzene,,Organic chemical,90,ug/L,upper,1996,,
-aquatic,aquatic,,Ethylene glycol,,Organic chemical,192000,ug/L,upper,1997,,
-aquatic,aquatic,,Fluoranthene,,Organic chemical,0.04,ug/L,upper,1999,,
-aquatic,aquatic,,Fluorene,,Organic chemical,3,ug/L,upper,1999,,
-aquatic,aquatic,,Fluoride ,,Inorganic chemical,120,ug/L,upper,2002,,
-aquatic,aquatic,,Glyphosate,,Pesticide,800,ug/L,upper,2012,,
-aquatic,aquatic,,Hexachlorobutadiene,,Organic chemical,1.3,ug/L,upper,1999,,
-aquatic,aquatic,,Lindane,,Pesticide,0.01,ug/L,upper,1987,,
-aquatic,aquatic,,Imidacloprid,,Pesticide,0.23,ug/L,upper,2007,,
-aquatic,aquatic,,Linuron,,Pesticide,7,ug/L,upper,1995,,
-aquatic,aquatic,,Mercury,,Metal,0.026,ug/L,upper,2003,,
-aquatic,aquatic,,Methoprene,,Pesticide,0.09,ug/L,upper,2007,,
-aquatic,aquatic,,Methyl tertiary-butyl ether ,,Organic chemical,10000,ug/L,upper,2003,,
-aquatic,aquatic,,Methylchlorophenoxyacetic acid (4-Chloro-2-methyl phenoxy acetic acid; 2-Methyl-4-chloro phenoxy acetic acid),,Pesticide,2.6,ug/L,upper,1995,,
-aquatic,aquatic,,Methylmercury,,Organic chemical,0.004,ug/L,upper,2003,,
-aquatic,aquatic,,Metolachlor,,Pesticide,7.8,ug/L,upper,1991,,
-aquatic,aquatic,,Metribuzin,,Pesticide,1,ug/L,upper,1990,,
-aquatic,aquatic,,Monochlorobenzene,,Organic chemical,1.3,ug/L,upper,1997,,
-aquatic,aquatic,,Monochlorophenols,,Organic chemical,7,ug/L,upper,1987,,
-aquatic,aquatic,,Naphthalene,,Organic chemical,1.1,ug/L,upper,1999,,
-aquatic,aquatic,,Nitrite,,Inorganic chemical,11820,ug/L,upper,1987,,60 NO2-N
-aquatic,aquatic,,Nonylphenol and its ethoxylates,,Organic chemical,1,ug/L,upper,2002,,
-aquatic,aquatic,,Pentachlorobenzene,,Organic chemical,6,ug/L,upper,1997,,
-aquatic,aquatic,,Pentachlorophenol,,Organic chemical,0.5,ug/L,upper,1987,,
-aquatic,aquatic,,Permethrin,,Pesticide,0.004,ug/L,upper,2006,,
-aquatic,aquatic,,Phenanthrene,,Organic chemical,0.4,ug/L,upper,1999,,
-aquatic,aquatic,,Phenols (mono-& dihydric),,Organic chemical,4,ug/L,upper,1999,,
-aquatic,aquatic,,Phenoxy herbicides,,Pesticide,4,ug/L,upper,1987,,
-aquatic,aquatic,,Picloram,,Pesticide,29,ug/L,upper,1990,,
-aquatic,aquatic,,Propylene glycol,,Organic chemical,500000,ug/L,upper,1997,,
-aquatic,aquatic,,Pyrene,,Organic chemical,0.025,ug/L,upper,1999,,
-aquatic,aquatic,,pH,,pH,6.5,ug/L,lower,1987,,
-aquatic,aquatic,,pH,,pH,9,ug/L,upper,1987,,
-aquatic,aquatic,,Quinoline,,Organic chemical,3.4,,upper,1999,,
-aquatic,aquatic,,Reactive Chlorine Species,,Inorganic chemical,0.5,,upper,1999,,
-aquatic,aquatic,,Selenium,,Metal,1,,upper,1987,,
-aquatic,aquatic,,Silver,,Metal,0.25,,upper,2015,,
-aquatic,aquatic,,Simazine,,Pesticide,10,,upper,1991,,
-aquatic,aquatic,,Styrene,,Organic chemical,72,,upper,1999,,
-aquatic,aquatic,,Sulfolane,,Organic chemical,50000,,upper,2005,,
-aquatic,aquatic,,Tebuthiuron,,Pesticide,1.6,,upper,1995,,
-aquatic,aquatic,,Tetrachloromethane,,Organic chemical,13.3,,upper,1992,,
-aquatic,aquatic,,Tetrachlorophenols,,Organic chemical,1,,upper,1987,,
-aquatic,aquatic,,Thallium,,Metal,0.8,,upper,1999,,
-aquatic,aquatic,,Toluene,,Organic chemical,2,,upper,1996,,
-aquatic,aquatic,,Triallate,,Pesticide,0.24,,upper,1992,,
-aquatic,aquatic,,Tributyltin,,Organic chemical,0.0008,,upper,1992,,
-aquatic,aquatic,,Trichlorfon,,Pesticide,0.009,,upper,1992,,
-aquatic,aquatic,,Trichloromethane,,Organic chemical,1.8,,upper,1992,,
-aquatic,aquatic,,Trichlorophenols,,Organic chemical,18,,upper,1987,,
-aquatic,aquatic,,Trifluralin,,Pesticide,0.2,,upper,1993,,
-aquatic,aquatic,,Triphenyltin,,Organic chemical,0.022,,upper,1992,,
-recreational,recreational,,E.coli,,Biological,400,per 100 mL ,upper,,,Swimming: Single-sample maximum concentration
-recreational,recreational,,Cyanobacteria,,Biological,100000,cells/mL,upper,,,
-recreational,recreational,,microcystin,,Biological,20,ug/L,upper,,,Swimming
-recreational,recreational,,ph,,pH,5,,upper,,CCME,Chemical group?
-recreational,recreational,,ph,,pH,9,,lower,,,Chemical group?
-trophic,oligotrophic,river,tp,,Nutrients,25,ug/L,upper,1998,Dodds et al. 1998,
-trophic,mesotrophic,river,tp,,Nutrients,75,ug/L,upper,1998,Dodds et al. 1998,
-trophic,mesotrophic,river,tp,,Nutrients,25,ug/L,lower,1998,Dodds et al. 1998,
-trophic,eutrophic,river,tp,,Nutrients,75,ug/L,lower,1998,Dodds et al. 1998,
-trophic,oligotrophic,river,tn,,Nutrients,700,ug/L,upper,1998,Dodds et al. 1998,
-trophic,mesotrophic,river,tn,,Nutrients,1500,ug/L,upper,1998,Dodds et al. 1998,
-trophic,mesotrophic,river,tn,,Nutrients,700,ug/L,lower,1998,Dodds et al. 1998,
-trophic,oligotrophic,river,chlorophyll ,,Biological,10,ug/L,upper,1998,Dodds et al. 1998,
-trophic,mesotrophic,river,suspended chlorophyll,,Biological,30,ug/L,upper,1998,Dodds et al. 1998,
-trophic,eutrophic,river,tn,,Nutrients,1500,ug/L,lower,1998,Dodds et al. 1998,
-DOC,DOC,,DOC,,DOC,8500,ug/L,upper,2018,Lapierre ,
+"","SuperCategory","Category","System","Pollutant","CAS","Chemical.groups","Concentration","Units","Limit","Date","Reference","Notes"
+"1","irrigation","irrigation","","Aldicarb","116063","Pesticide","54.9","ug/L","lower",1993,"",""
+"2","irrigation","irrigation","","Aluminium ","","Metal","5000","ug/L","lower",1987,"",""
+"3","irrigation","irrigation","","arsenic","","Metal","100","ug/L","upper",1997,"",""
+"4","irrigation","irrigation","","atrazine","1912249","Pesticide","10","ug/L","upper",1989,"",""
+"5","irrigation","irrigation","","Beryllium ","","Metal","100","ug/L","upper",1987,"",""
+"6","irrigation","irrigation","","Bromacil","314409","Pesticide","0.2","ug/L","upper",1997,"",""
+"7","irrigation","irrigation","","Bromoxynil","","Pesticide","0.33","ug/L","upper",1993,"",""
+"8","irrigation","irrigation","","cadmium","7440439","Metal","5.1","ug/L","upper",1996,"",""
+"9","irrigation","irrigation","","Chlorothalonil","1897456","Pesticide","5.8","ug/L","upper",1994,"","(other crops) "
+"10","irrigation","irrigation","","Chromium, hexavalent (Cr(VI))","7440473","Metal","8","ug/L","upper",1997,"",""
+"11","irrigation","irrigation","","Chromium, trivalent (Cr(III))","7440473","Metal","4.9","ug/L","upper",1997,"",""
+"12","irrigation","irrigation","","Cobalt ","","Metal","50","ug/L","upper",1987,"",""
+"13","irrigation","irrigation","","E.coli","","Biological","100","per 100 mL ","upper",1987,"",""
+"14","irrigation","irrigation","","Total coliforms<U+00A0>","","Biological","1000","per 100 mL ","upper",1987,"",""
+"15","irrigation","irrigation","","Cyanazine","2175462","Pesticide","0.5","ug/L","upper",1990,"",""
+"16","irrigation","irrigation","","Dicamba","1918009","Pesticide","0.025","ug/L","upper",1993,"CCME","2.5 times the detection limit, value of 0.006 <U+00B5>g?L-1 is recommended as the overall Canadian water quality guideline for irrigation "
+"17","irrigation","irrigation","","Diclofop-methyl","51338273","Pesticide","0.18","ug/L","upper",1993,"",""
+"18","irrigation","irrigation","","Diisopropanolamine","110974","Organic chemical","2000","ug/L","upper",2006,"",""
+"19","irrigation","irrigation","","Dinoseb","88857","Pesticide","16","ug/L","upper",1992,"",""
+"20","irrigation","irrigation","","Fluoride ","","Inorganic chemical","1000","ug/L","upper",1987,"",""
+"21","irrigation","irrigation","","iron ","","Metal","5000","ug/L","upper",1987,"",""
+"22","irrigation","irrigation","","lead","","Metal","200","ug/L","upper",1987,"",""
+"23","irrigation","irrigation","","Linuron","","Pesticide","0.071","ug/L","upper",1995,"",""
+"24","irrigation","irrigation","","Lithium ","","Metal","2500","ug/L","upper",1987,"",""
+"25","irrigation","irrigation","","Manganese ","","Metal","200","ug/L","upper",1987,"",""
+"26","irrigation","irrigation","","Methylchlorophenoxyacetic acid ","94746","Pesticide","0.025","ug/L","upper",1995,"",""
+"27","irrigation","irrigation","","Metolachlor","51218452","Pesticide","28","ug/L","upper",1991,"",""
+"28","irrigation","irrigation","","Metribuzin","21087649","Pesticide","0.5","ug/L","upper",1990,"",""
+"29","irrigation","irrigation","","nickel ","","Metal","200","ug/L","upper",1987,"",""
+"30","irrigation","irrigation","","Simazine","122349","Pesticide","0.5","ug/L","upper",1991,"",""
+"31","irrigation","irrigation","","SulfolaneBondelane","126330","Organic chemical","500","ug/L","upper",2005,"",""
+"32","irrigation","irrigation","","Tebuthiuron","34014181","Pesticide","0.27","ug/L","upper",1995,"","(cereals, tame hays, and pastures) "
+"33","irrigation","irrigation","","uranium"," 7440-61-1","Metal","10","ug/L","upper",1987,"",""
+"34","irrigation","irrigation","","Vanadium ","","Metal","100","ug/L","upper",1987,"",""
+"35","livestock","livestock","","1,1,2-Trichloroethene"," 79-01-6","Organic chemical","50","ug/L","upper",1991,"",""
+"36","livestock","livestock","","1,2-Dichloroethane","1070602","Organic chemical","5","ug/L","upper",1991,"",""
+"37","livestock","livestock","","Aldicarb","116063","Pesticide","11","ug/L","upper",1993,"",""
+"38","livestock","livestock","","Aluminium ","","Metal","5000","ug/L","upper",1987,"",""
+"39","livestock","livestock","","arsenic","","Metal","25","ug/L","upper",1997,"",""
+"40","livestock","livestock","","atrazine","1912249","Pesticide","5","ug/L","upper",1989,"",""
+"41","livestock","livestock","","Beryllium ","","Metal","100","ug/L","upper",1987,"",""
+"42","livestock","livestock","","Boron ","","Metal","5000","ug/L","upper",1987,"",""
+"43","livestock","livestock","","Bromacil","314409","Pesticide","1100","ug/L","upper",1997,"",""
+"44","livestock","livestock","","Bromoxynil","","Pesticide","11","ug/L","upper",1993,"",""
+"45","livestock","livestock","","cadmium","7440439","Metal","80","ug/L","upper",1996,"",""
+"46","livestock","livestock","","Calcium ","","Metal","1000000","ug/L","upper",1987,"",""
+"47","livestock","livestock","","Captan","133062","Pesticide","13","ug/L","upper",1991,"",""
+"48","livestock","livestock","","Carbaryl","63252","Pesticide","1100","ug/L","upper",1997,"",""
+"49","livestock","livestock","","Carbofuran","1564662","Pesticide","45","ug/L","upper",1989,"",""
+"50","livestock","livestock","","Chlordane","","Pesticide","7","ug/L","upper",1987,"",""
+"51","livestock","livestock","","Chlorothalonil","1897456","Pesticide","170","ug/L","upper",1994,"",""
+"52","livestock","livestock","","Chlorpyrifos","2921882","Pesticide","24","ug/L","upper",1997,"",""
+"53","livestock","livestock","","Chromium, hexavalent (Cr(VI))","7440473","Metal","50","ug/L","upper",1997,"",""
+"54","livestock","livestock","","Chromium, trivalent (Cr(III))","7440473","Metal","50","ug/L","upper",1997,"",""
+"55","livestock","livestock","","Cobalt ","","Metal","1000","ug/L","upper",1987,"",""
+"56","livestock","livestock","","Cyanazine","2175462","Pesticide","10","ug/L","upper",1990,"",""
+"57","livestock","livestock","","Deltamethrin","52918635","Pesticide","2.5","ug/L","upper",1997,"",""
+"58","livestock","livestock","","Dibromochloromethane","","Organic chemical","100","ug/L","upper",1992,"",""
+"59","livestock","livestock","","Dicamba","1918009","Pesticide","122","ug/L","upper",1993,"",""
+"60","livestock","livestock","","Dichloro diphenyl trichloroethane","","Pesticide","30","ug/L","upper",1987,"",""
+"61","livestock","livestock","","Dichlorobromomethane","","Organic chemical","100","ug/L","upper",1992,"",""
+"62","livestock","livestock","","Dichloromethane","75092","Organic chemical","50","ug/L","upper",1992,"",""
+"63","livestock","livestock","","Diclofop-methyl","51338273","Pesticide","9","ug/L","upper",1993,"",""
+"64","livestock","livestock","","Dimethoate","60515","Pesticide","3","ug/L","upper",1993,"",""
+"65","livestock","livestock","","Dinoseb","88857","Pesticide","150","ug/L","upper",1992,"",""
+"66","livestock","livestock","","Endrin","","Pesticide","0.2","ug/L","upper",1987,"",""
+"67","livestock","livestock","","Ethylbenzene","100414","Organic chemical","2.4","ug/L","upper",1996,"",""
+"68","livestock","livestock","","Glyphosate","1071836","Pesticide","280","ug/L","upper",1989,"",""
+"69","livestock","livestock","","Heptachlor","","Pesticide","3","ug/L","upper",1987,"",""
+"70","livestock","livestock","","Hexachlorobenzene","","Organic chemical","0.52","ug/L","upper",1991,"",""
+"71","livestock","livestock","","Hexachlorocyclohexane","","Pesticide","4","ug/L","upper",1987,"",""
+"72","livestock","livestock","","lead","","Metal","100","ug/L","upper",1987,"",""
+"73","livestock","livestock","","Mercury","7439976","Metal","3","ug/L","upper",1987,"",""
+"74","livestock","livestock","","Methylchlorophenoxyacetic acid ","94746","Pesticide","25","ug/L","upper",1995,"",""
+"75","livestock","livestock","","Metolachlor","51218452","Pesticide","50","ug/L","upper",1991,"",""
+"76","livestock","livestock","","Metribuzin","21087649","Pesticide","80","ug/L","upper",1990,"",""
+"77","livestock","livestock","","Molybdenum ","","Metal","500","ug/L","upper",1987,"",""
+"78","livestock","livestock","","nickel ","","Metal","1000","ug/L","upper",1987,"",""
+"79","livestock","livestock","","Nitrate + Nitrite ","","Inorganic chemical","100000","ug/L","upper",1987,"","NO +NO -N 3 2"
+"80","livestock","livestock","","Nitrite ","","Inorganic chemical","10000","ug/L","upper",1987,""," NO -N "
+"81","livestock","livestock","","Phenols (mono- & dihydric)","108952","Organic chemical","2","ug/L","upper",1987,"",""
+"82","livestock","livestock","","Phenoxy herbicides2,4 D; 2,4-Dichlorophenoxyacetic acid","","Pesticide","100","ug/L","upper",1987,"",""
+"83","livestock","livestock","","Picloram","1918021","Pesticide","190","ug/L","upper",1990,"",""
+"84","livestock","livestock","","Selenium ","","Metal","50","ug/L","upper",1987,"",""
+"85","livestock","livestock","","Simazine","122349","Pesticide","10","ug/L","upper",1991,"",""
+"86","livestock","livestock","","Sulphate ","","Inorganic chemical","1000000","ug/L","upper",1987,"",""
+"87","livestock","livestock","","Tebuthiuron","34014181","Pesticide","130","ug/L","upper",1995,"",""
+"88","livestock","livestock","","TetrachloromethaneCarbon tetrachloride","56235","Organic chemical","5","ug/L","upper",1992,"",""
+"89","livestock","livestock","","Toluene","108883","Organic chemical","24","ug/L","upper",1996,"",""
+"90","livestock","livestock","","Total dissolved solids (salinity)","","Inorganic chemical","3000000","ug/L","upper",1987,"","chemical group?"
+"91","livestock","livestock","","Toxaphene","","Pesticide","5","ug/L","upper",1987,"",""
+"92","livestock","livestock","","Triallate","2303175","Pesticide","230","ug/L","upper",1992,"",""
+"93","livestock","livestock","","Tribromomethane","","Organic chemical","100","ug/L","upper",1992,"",""
+"94","livestock","livestock","","Tributyltin ","","Organic chemical","250","ug/L","upper",1992,"",""
+"95","livestock","livestock","","Trichloromethane","67663","Organic chemical","100","ug/L","upper",1992,"",""
+"96","livestock","livestock","","Tricyclohexyltin ","","Organic chemical","250","ug/L","upper",1992,"",""
+"97","livestock","livestock","","Trifluralin","1582098","Pesticide","45","ug/L","upper",1992,"",""
+"98","livestock","livestock","","Triphenyltin ","","Organic chemical","820","ug/L","upper",1992,"",""
+"99","livestock","livestock","","uranium"," 7440-61-1","Metal","200","ug/L","upper",1987,"",""
+"100","livestock","livestock","","Vanadium ","","Metal","100","ug/L","upper",1987,"",""
+"101","livestock","livestock","","zinc ","","Metal","50000","ug/L","upper",1987,"",""
+"102","drink","drink","","Antimony","","Metal","0.006","mg/L","upper",1997,"",""
+"103","drink","drink","","arsenic","","Metal","0.01","mg/L","upper",2006,"",""
+"104","drink","drink","","atrazine","","Pesticide","0.005","mg/L","upper",1993,"",""
+"105","drink","drink","","Azinphos-methyl","","Pesticide","0.02","mg/L","upper",2005,"",""
+"106","drink","drink","","Barium","","Metal","1","mg/L","upper",1990,"",""
+"107","drink","drink","","Benzene","","Organic chemical","0.005","mg/L","upper",2009,"",""
+"108","drink","drink","","Benzo(a)pyrene","","Organic chemical","0.00004","mg/L","upper",2016,"",""
+"109","drink","drink","","Boron ","","Metal","5","mg/L","upper",1990,"",""
+"110","drink","drink","","Bromate","","Disinfectant & BP","0.01","mg/L","upper",1998,"",""
+"111","drink","drink","","Bromoxynil","","Pesticide","0.005","mg/L","upper",2005,"",""
+"112","drink","drink","","cadmium","","Metal","0.005","mg/L","upper",2005,"",""
+"113","drink","drink","","Carbaryl","","Pesticide","0.09","mg/L","upper",2005,"",""
+"114","drink","drink","","Carbofuran","","Pesticide","0.09","mg/L","upper",2005,"",""
+"115","drink","drink","","Carbon tetrachlorid","","Organic chemical","0.002","mg/L","upper",2010,"",""
+"116","drink","drink","","Chloramines","","Disinfectant & BP","3","mg/L","upper",1995,"",""
+"117","drink","drink","","Chlorate","","Disinfectant & BP","1","mg/L","upper",2008,"",""
+"118","drink","drink","","Chlorite","","Disinfectant & BP","1","mg/L","upper",2008,"",""
+"119","drink","drink","","Chlorpyrifos","","Pesticide","0.09","mg/L","upper",1986,"",""
+"120","drink","drink","","Chromium","","Metal","0.05","mg/L","upper",1986,"",""
+"121","drink","drink","","Cyanide","","Inorganic chemical","0.2","mg/L","upper",1991,"",""
+"122","drink","drink","","Microcystin","","Organic chemical","0.0015","mg/L","upper",2002,"","Microcystin-LR"
+"123","drink","drink","","Diazinon","","Pesticide","0.02","mg/L","upper",2005,"",""
+"124","drink","drink","","Dicamba","","Pesticide","0.12","mg/L","upper",2005,"",""
+"125","drink","drink","","1,2- Dichlorobenzene","","Organic chemical","0.2","mg/L","upper",1987,"",""
+"126","drink","drink","","1,4- Dichlorobenzene","","Organic chemical","0.005","mg/L","upper",1987,"",""
+"127","drink","drink","","1,2-Dichloroethane","","Organic chemical","0.005","mg/L","upper",2014,"",""
+"128","drink","drink","","1,1- Dichloroethylene","","Organic chemical","0.014","mg/L","upper",1994,"",""
+"129","drink","drink","","Dichloromethane","","Organic chemical","0.05","mg/L","upper",2011,"",""
+"130","drink","drink","","2,4-Dichlorophenol","","Organic chemical","chemical","mg/L","upper",2005,"",""
+"131","drink","drink","","2,4- Dichlorophenoxy acetic acid (2,4-D)","","Pesticide","0.1","mg/L","upper",1991,"",""
+"132","drink","drink","","Diclofop-methyl","","Pesticide","0.009","mg/L","upper",2005,"",""
+"133","drink","drink","","Dimethoate","","Pesticide","0.02","mg/L","upper",2005,"",""
+"134","drink","drink","","Diquat","","Pesticide","0.07","mg/L","upper",2005,"",""
+"135","drink","drink","","Diuron","","Pesticide","0.15","mg/L","upper",2005,"",""
+"136","drink","drink","","Ethylbenzene","","Organic chemical","0.14","mg/L","upper",2014,"",""
+"137","drink","drink","","Fluoride ","","Inorganic chemical","1.5","mg/L","upper",2010,"",""
+"138","drink","drink","","Glyphosate","","Pesticide","0.28","mg/L","upper",2005,"",""
+"139","drink","drink","","Haloacetic acids <U+0096> Total (HAAs)","","Disinfectant & BP","0.08","mg/L","upper",2008,"",""
+"140","drink","drink","","lead","","Metal","0.01","mg/L","upper",1992,"",""
+"141","drink","drink","","Malathion","","Pesticide","0.19","mg/L","upper",2005,"",""
+"142","drink","drink","","Mercury","","Metal","0.001","mg/L","upper",1986,"",""
+"143","drink","drink","","2-Methyl-4- chlorophenoxyacetic acid","","Pesticide","0.1","mg/L","upper",2010,"",""
+"144","drink","drink","","Metolachlor","","Pesticide","0.05","mg/L","upper",1986,"",""
+"145","drink","drink","","Metribuzin","","Pesticide","0.08","mg/L","upper",2005,"",""
+"146","drink","drink","","Monochlorobenzene","","Organic chemical","0.08","mg/L","upper",1987,"",""
+"147","drink","drink","","nitrate","","Inorganic chemical","45","mg/L","upper",2013,"","45 as nitrate; 10 as nitratenitrogen"
+"148","drink","drink","","Nitrilotriacetic acid","","Inorganic chemical","0.4","mg/L","upper",1990,"",""
+"149","drink","drink","","Nitrite ","","Inorganic chemical","3","mg/L","upper",2013,"","3 as nitrite; 1 as nitritenitrogen"
+"150","drink","drink","","N-Nitroso dimethylamine","","Disinfectant & BP","0.00004","mg/L","upper",2013,"",""
+"151","drink","drink","","Paraquat (dichloride)","","Pesticide","0.01","mg/L","upper",2005,"",""
+"152","drink","drink","","Paraquat (ion)","","Pesticide","0.007","mg/L","upper",2005,"",""
+"153","drink","drink","","Pentachlorophenol","","Organic chemical","0.06","mg/L","upper",2005,"",""
+"154","drink","drink","","Phorate","","Pesticide","0.002","mg/L","upper",2005,"",""
+"155","drink","drink","","Picloram","","Pesticide","0.19","mg/L","upper",2005,"",""
+"156","drink","drink","","Selenium ","","Metal","0.05","mg/L","upper",2014,"",""
+"157","drink","drink","","Simazine","","Pesticide","0.01","mg/L","upper",1986,"",""
+"158","drink","drink","","Terbufos","","Pesticide","0.001","mg/L","upper",2005,"",""
+"159","drink","drink","","Tetrachloroethylene","","Organic chemical","0.01","mg/L","upper",2015,"",""
+"160","drink","drink","","2,3,4,6- Tetrachlorophenol","","Organic chemical","0.1","mg/L","upper",2005,"",""
+"161","drink","drink","","Toluene","","Organic chemical","0.06","mg/L","upper",2014,"",""
+"162","drink","drink","","Trichloroethylene","","Organic chemical","0.005","mg/L","upper",2005,"",""
+"163","drink","drink","","2,4,6- Trichlorophenol","","Organic chemical","0.005","mg/L","upper",2005,"",""
+"164","drink","drink","","Trifluralin","","Pesticide","0.045","mg/L","upper",2005,"",""
+"165","drink","drink","","Trihalomethanes","","Disinfectant & BP","0.1","mg/L","upper",2006,"",""
+"166","drink","drink","","uranium","","Metal","0.02","mg/L","upper",1999,"",""
+"167","drink","drink","","Vinyl chloride","","Organic chemical","0.002","mg/L","upper",2013,"",""
+"168","drink","drink","","Xylenes","","Organic chemical","0.09","mg/L","upper",2014,"","Total"
+"169","drink","drink","","Enteric protozoa","","Biological","","","upper",2012,"",""
+"170","drink","drink","","Total coliforms<U+00A0>","","Biological","25","per 100 mL ","upper",2011,"","Guideline:Treatment goal: Minimum 3 log removal and/or inactivation of cysts and oocysts"
+"171","drink","drink","","E.coli","","Biological","25","per 100 mL ","upper",2012,"","the real guideline is >0, but the detection limit is between 4 and 10"
+"172","drink","drink","","Enteric viruses<U+00A0>","","Biological","","","upper",2011,"",""
+"173","drink","drink","","turbidity","","Physical","0.1","NTU","upper",2012,"","Conventional and direct filtration: ? 0.3 NTU, slow sand and diatomaceous earth filtration: ? 1.0 NTU, slow sand and diatomaceous earth filtration: ? 1.0 NTU"
+"174","aquatic","aquatic","","arsenic","","Metal","5","ug/L","upper",1997,"",""
+"175","aquatic","aquatic","","atrazine","","Pesticide","1.8","ug/L","upper",1989,"","membrane filtration: ? 0.1 NTU"
+"176","aquatic","aquatic","","cadmium","","Metal","0.09","ug/L","upper",2014,"",""
+"177","aquatic","aquatic","","lead","","Metal","1","ug/L","upper",1987,"","Equation"
+"178","aquatic","aquatic","","uranium","","Metal","15","ug/L","upper",2011,"",""
+"179","aquatic","aquatic","","chloride","","Inorganic chemical","120000","ug/L","upper",2011,"",""
+"180","aquatic","aquatic","","copper","","Metal","2","ug/L","upper",1987,"",""
+"181","aquatic","aquatic","","molybdenum","","Metal","73","ug/L","upper",1999,"",""
+"182","aquatic","aquatic","","nickel ","","Metal","25","ug/L","upper",1987,"",""
+"183","aquatic","aquatic","","nitrate","","Inorganic chemical","13000","ug/L","upper",2012,"",""
+"184","aquatic","aquatic","","zinc ","","Metal","30","ug/L","upper",1987,"",""
+"185","aquatic","aquatic","","iron ","","Metal","300","ug/L","upper",1987,"",""
+"186","aquatic","aquatic","","1,1,2,2- Tetrachloroethene","","Organic chemical","110","ug/L","upper",1993,"",""
+"187","aquatic","aquatic","","1,2,3,4-Tetrachlorobenzene","","Organic chemical","1.8","ug/L","upper",1997,"",""
+"188","aquatic","aquatic","","1,1,2-Trichloroethene","","Organic chemical","21","ug/L","upper",1991,"",""
+"189","aquatic","aquatic","","1,2,3-Trichlorobenzene","","Organic chemical","8","ug/L","upper",1997,"",""
+"190","aquatic","aquatic","","1,2,4-Trichlorobenzene","","Organic chemical","24","ug/L","upper",1997,"",""
+"191","aquatic","aquatic","","1,2-Dichlorobenzene","","Organic chemical","0.7","ug/L","upper",1997,"",""
+"192","aquatic","aquatic","","1,2-Dichloroethane","","Organic chemical","100","ug/L","upper",1991,"",""
+"193","aquatic","aquatic","","1,3-Dichlorobenzene","","Organic chemical","150","ug/L","upper",1997,"",""
+"194","aquatic","aquatic","","1,4-Dichlorobenzene","","Organic chemical","26","ug/L","upper",1997,"",""
+"195","aquatic","aquatic","","3-Iodo-2-propynyl butyl carbamate","","Organic chemical","1.9","ug/L","upper",1999,"",""
+"196","aquatic","aquatic","","Acenaphthene","","Organic chemical","5.8","ug/L","upper",1999,"",""
+"197","aquatic","aquatic","","Acridine","","Organic chemical","4.4","ug/L","upper",1999,"",""
+"198","aquatic","aquatic","","Aldicarb","116063","Pesticide","1","ug/L","upper",1993,"",""
+"199","aquatic","aquatic","","Aluminium","","Metal","5","ug/L","upper",1993,"","5 <U+00B5>g/L if pH < 6.5;100 <U+00B5>g/L if pH ? 6.5"
+"200","aquatic","aquatic","","Ammonia (total)","","Organic chemical","0.021","mg/L","upper",2001,"","minium, table"
+"201","aquatic","aquatic","","Ammonia (un-ionized)","","Organic chemical","19","ug/L","upper",2001,"",""
+"202","aquatic","aquatic","","Aniline","","Organic chemical","2.2","ug/L","upper",1993,"",""
+"203","aquatic","aquatic","","Anthracene","","Organic chemical","0.012","ug/L","upper",1999,"",""
+"204","aquatic","aquatic","","Benz(a)anthracene","","Organic chemical","0.018","ug/L","upper",1999,"",""
+"205","aquatic","aquatic","","Benzene","","Organic chemical","370","ug/L","upper",1999,"",""
+"206","aquatic","aquatic","","Benzo(a)pyrene","","Organic chemical","0.015","ug/L","upper",1999,"",""
+"207","aquatic","aquatic","","Boron ","","Metal","15000","ug/L","upper",2009,"",""
+"208","aquatic","aquatic","","Bromacil","","Pesticide","5","ug/L","upper",1999,"",""
+"209","aquatic","aquatic","","Bromoxynil","","Pesticide","5","ug/L","upper",1993,"",""
+"210","aquatic","aquatic","","Captan","","Pesticide","1.3","ug/L","upper",1991,"",""
+"211","aquatic","aquatic","","Carbaryl","","Pesticide","0.2","ug/L","upper",2009,"",""
+"212","aquatic","aquatic","","Carbofuran","","Pesticide","1.8","ug/L","upper",1989,"",""
+"213","aquatic","aquatic","","Chlorothalonil","","Pesticide","0.18","ug/L","upper",1994,"",""
+"214","aquatic","aquatic","","Chlorpyrifos","","Pesticide","0.002","ug/L","upper",2008,"",""
+"215","aquatic","aquatic","","Chromium, hexavalent (Cr(VI))","","Metal","1","ug/L","upper",1997,"",""
+"216","aquatic","aquatic","","Chromium, trivalent (Cr(III))","","Metal","8.9","ug/L","upper",1997,"",""
+"217","aquatic","aquatic","","Cyanide","","Inorganic chemical","5","ug/L","upper",1987,"","as free CN"
+"218","aquatic","aquatic","","Cyanazine","","Pesticide","2","ug/L","upper",1990,"",""
+"219","aquatic","aquatic","","Deltamethrin","","Pesticide","0.0004","ug/L","upper",1997,"",""
+"220","aquatic","aquatic","","Di(2-ethylhexyl) phthalate","","Organic chemical","16","ug/L","upper",1993,"",""
+"221","aquatic","aquatic","","Di-n-butyl phthalate","","Organic chemical","19","ug/L","upper",1993,"",""
+"222","aquatic","aquatic","","Dicamba","","Pesticide","10","ug/L","upper",1993,"",""
+"223","aquatic","aquatic","","Dichloromethane","","Organic chemical","98.1","ug/L","upper",1992,"",""
+"224","aquatic","aquatic","","Dichlorophenols","","Organic chemical","0.2","ug/L","upper",1987,"",""
+"225","aquatic","aquatic","","Diclofop-methyl","","Pesticide","6.1","ug/L","upper",1993,"",""
+"226","aquatic","aquatic","","Didecyl dimethyl ammonium chloride","","Pesticide","1.5","ug/L","upper",1999,"",""
+"227","aquatic","aquatic","","Diisopropanolamine","","Organic chemical","1600","ug/L","upper",2005,"",""
+"228","aquatic","aquatic","","Dimethoate","","Pesticide","6.2","ug/L","upper",1993,"",""
+"229","aquatic","aquatic","","Dinoseb","","Pesticide","0.05","ug/L","upper",1992,"",""
+"230","aquatic","aquatic","","Dissolved oxygen","","Inorganic chemical","<U+00A0>5500","ug/L","upper",1999,"","minimum, variable"
+"231","aquatic","aquatic","","Endosulfan","","Pesticide","0.003","ug/L","upper",2010,"",""
+"232","aquatic","aquatic","","Ethylbenzene","","Organic chemical","90","ug/L","upper",1996,"",""
+"233","aquatic","aquatic","","Ethylene glycol","","Organic chemical","192000","ug/L","upper",1997,"",""
+"234","aquatic","aquatic","","Fluoranthene","","Organic chemical","0.04","ug/L","upper",1999,"",""
+"235","aquatic","aquatic","","Fluorene","","Organic chemical","3","ug/L","upper",1999,"",""
+"236","aquatic","aquatic","","Fluoride ","","Inorganic chemical","120","ug/L","upper",2002,"",""
+"237","aquatic","aquatic","","Glyphosate","","Pesticide","800","ug/L","upper",2012,"",""
+"238","aquatic","aquatic","","Hexachlorobutadiene","","Organic chemical","1.3","ug/L","upper",1999,"",""
+"239","aquatic","aquatic","","Lindane","","Pesticide","0.01","ug/L","upper",1987,"",""
+"240","aquatic","aquatic","","Imidacloprid","","Pesticide","0.23","ug/L","upper",2007,"",""
+"241","aquatic","aquatic","","Linuron","","Pesticide","7","ug/L","upper",1995,"",""
+"242","aquatic","aquatic","","Mercury","","Metal","0.026","ug/L","upper",2003,"",""
+"243","aquatic","aquatic","","Methoprene","","Pesticide","0.09","ug/L","upper",2007,"",""
+"244","aquatic","aquatic","","Methyl tertiary-butyl ether<U+00A0>","","Organic chemical","10000","ug/L","upper",2003,"",""
+"245","aquatic","aquatic","","Methylchlorophenoxyacetic acid (4-Chloro-2-methyl phenoxy acetic acid; 2-Methyl-4-chloro phenoxy acetic acid)","","Pesticide","2.6","ug/L","upper",1995,"",""
+"246","aquatic","aquatic","","Methylmercury","","Organic chemical","0.004","ug/L","upper",2003,"",""
+"247","aquatic","aquatic","","Metolachlor","","Pesticide","7.8","ug/L","upper",1991,"",""
+"248","aquatic","aquatic","","Metribuzin","","Pesticide","1","ug/L","upper",1990,"",""
+"249","aquatic","aquatic","","Monochlorobenzene","","Organic chemical","1.3","ug/L","upper",1997,"",""
+"250","aquatic","aquatic","","Monochlorophenols","","Organic chemical","7","ug/L","upper",1987,"",""
+"251","aquatic","aquatic","","Naphthalene","","Organic chemical","1.1","ug/L","upper",1999,"",""
+"252","aquatic","aquatic","","Nitrite","","Inorganic chemical","11820","ug/L","upper",1987,"","60 NO2-N"
+"253","aquatic","aquatic","","Nonylphenol and its ethoxylates","","Organic chemical","1","ug/L","upper",2002,"",""
+"254","aquatic","aquatic","","Pentachlorobenzene","","Organic chemical","6","ug/L","upper",1997,"",""
+"255","aquatic","aquatic","","Pentachlorophenol","","Organic chemical","0.5","ug/L","upper",1987,"",""
+"256","aquatic","aquatic","","Permethrin","","Pesticide","0.004","ug/L","upper",2006,"",""
+"257","aquatic","aquatic","","Phenanthrene","","Organic chemical","0.4","ug/L","upper",1999,"",""
+"258","aquatic","aquatic","","Phenols (mono-& dihydric)","","Organic chemical","4","ug/L","upper",1999,"",""
+"259","aquatic","aquatic","","Phenoxy herbicides","","Pesticide","4","ug/L","upper",1987,"",""
+"260","aquatic","aquatic","","Picloram","","Pesticide","29","ug/L","upper",1990,"",""
+"261","aquatic","aquatic","","Propylene glycol","","Organic chemical","500000","ug/L","upper",1997,"",""
+"262","aquatic","aquatic","","Pyrene","","Organic chemical","0.025","ug/L","upper",1999,"",""
+"263","aquatic","aquatic","","pH","","pH","6.5","ug/L","lower",1987,"",""
+"264","aquatic","aquatic","","pH","","pH","9","ug/L","upper",1987,"",""
+"265","aquatic","aquatic","","Quinoline","","Organic chemical","3.4","","upper",1999,"",""
+"266","aquatic","aquatic","","Reactive Chlorine Species","","Inorganic chemical","0.5","","upper",1999,"",""
+"267","aquatic","aquatic","","Selenium","","Metal","1","","upper",1987,"",""
+"268","aquatic","aquatic","","Silver","","Metal","0.25","","upper",2015,"",""
+"269","aquatic","aquatic","","Simazine","","Pesticide","10","","upper",1991,"",""
+"270","aquatic","aquatic","","Styrene","","Organic chemical","72","","upper",1999,"",""
+"271","aquatic","aquatic","","Sulfolane","","Organic chemical","50000","","upper",2005,"",""
+"272","aquatic","aquatic","","Tebuthiuron","","Pesticide","1.6","","upper",1995,"",""
+"273","aquatic","aquatic","","Tetrachloromethane","","Organic chemical","13.3","","upper",1992,"",""
+"274","aquatic","aquatic","","Tetrachlorophenols","","Organic chemical","1","","upper",1987,"",""
+"275","aquatic","aquatic","","Thallium","","Metal","0.8","","upper",1999,"",""
+"276","aquatic","aquatic","","Toluene","","Organic chemical","2","","upper",1996,"",""
+"277","aquatic","aquatic","","Triallate","","Pesticide","0.24","","upper",1992,"",""
+"278","aquatic","aquatic","","Tributyltin","","Organic chemical","0.0008","","upper",1992,"",""
+"279","aquatic","aquatic","","Trichlorfon","","Pesticide","0.009","","upper",1992,"",""
+"280","aquatic","aquatic","","Trichloromethane","","Organic chemical","1.8","","upper",1992,"",""
+"281","aquatic","aquatic","","Trichlorophenols","","Organic chemical","18","","upper",1987,"",""
+"282","aquatic","aquatic","","Trifluralin","","Pesticide","0.2","","upper",1993,"",""
+"283","aquatic","aquatic","","Triphenyltin","","Organic chemical","0.022","","upper",1992,"",""
+"284","recreational","recreational","","E.coli","","Biological","400","per 100 mL ","upper",NA,"","Swimming: Single-sample maximum concentration"
+"285","recreational","recreational","","Cyanobacteria","","Biological","100000","cells/mL","upper",NA,"",""
+"286","recreational","recreational","","microcystin","","Biological","20","ug/L","upper",NA,"","Swimming"
+"287","recreational","recreational","","ph","","pH","5","","upper",NA,"CCME","Chemical group?"
+"288","recreational","recreational","","ph","","pH","9","","lower",NA,"","Chemical group?"
+"289","trophic","oligotrophic","river","tp","","Nutrients","25","ug/L","upper",1998,"Dodds et al. 1998",""
+"290","trophic","mesotrophic","river","tp","","Nutrients","75","ug/L","upper",1998,"Dodds et al. 1998",""
+"291","trophic","mesotrophic","river","tp","","Nutrients","25","ug/L","lower",1998,"Dodds et al. 1998",""
+"292","trophic","eutrophic","river","tp","","Nutrients","75","ug/L","lower",1998,"Dodds et al. 1998",""
+"293","trophic","oligotrophic","river","tn","","Nutrients","700","ug/L","upper",1998,"Dodds et al. 1998",""
+"294","trophic","mesotrophic","river","tn","","Nutrients","1500","ug/L","upper",1998,"Dodds et al. 1998",""
+"295","trophic","mesotrophic","river","tn","","Nutrients","700","ug/L","lower",1998,"Dodds et al. 1998",""
+"296","trophic","oligotrophic","river","chlorophyll ","","Biological","10","ug/L","upper",1998,"Dodds et al. 1998",""
+"297","trophic","mesotrophic","river","suspended chlorophyll","","Biological","30","ug/L","upper",1998,"Dodds et al. 1998",""
+"298","trophic","eutrophic","river","tn","","Nutrients","1500","ug/L","lower",1998,"Dodds et al. 1998",""
+"299","DOC","DOC","","DOC","","DOC","8500","ug/L","upper",2018,"Lapierre ",""

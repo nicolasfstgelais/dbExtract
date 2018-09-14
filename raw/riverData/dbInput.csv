@@ -1,3 +1,3 @@
-path,type,name,sheet,stationID,dateID,dateFormat,units,wideVar,wideResults,NAvalue,transpose,Notes,lineSkip,importFunction
-raw\riverData\pwqmn_2016.csv,csv,,,STATION,DATE,A,UNITS,PARM_DESCRIPTION,RESULT,,,,0,
-raw\riverData\pwqmn_2015.csv,csv,,,STATION,DATE,A,UNITS,PARM_DESCRIPTION,RESULT,,,,0,
+"","path","type","name","sheet","stationID","dateID","dateFormat","units","wideVar","wideResults","NAvalue","transpose","Notes","lineSkip","importFunction"
+"1","raw\riverData\pwqmn_2016.csv","csv",NA,NA,"STATION","DATE","A","UNITS","PARM_DESCRIPTION","RESULT",NA,NA,NA,0,NA
+"2","raw\riverData\pwqmn_2015.csv","csv",NA,NA,"STATION","DATE","A","UNITS","PARM_DESCRIPTION","RESULT",NA,NA,NA,0,NA

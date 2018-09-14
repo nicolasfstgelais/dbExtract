@@ -1,3 +1,0 @@
-path,type,name,sheet,stationID,dateID,dateFormat,units,wideVar,wideResults,NAvalue,transpose,Notes,lineSkip,importFunction
-raw\riverData\pwqmn_rawdata_2016.xlsx,xlsx,,,STATION,DATE,A,UNITS,PARM_DESCRIPTION,RESULT,,,,0,
-raw\riverData\pwqmn_rawdata_2015.xlsx,xlsx,,,STATION,DATE,A,UNITS,PARM_DESCRIPTION,RESULT,,,,0,

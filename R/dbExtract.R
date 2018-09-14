@@ -168,10 +168,10 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
 
 
     # store all variables name in a vector for future reference
-    if(i==1)write.csv(unique(db[,input[i, "wideVar"]]),"data/colNames.csv",row.names = F)
-    if(i!=1){
-      colNames=read.csv("data/colNames.csv",stringsAsFactors = F)
-       write.csv(unique(c(colNames[,1],unique(db[,input[i, "wideVar"]]))),"data/colNames.csv",row.names = F)}
+    #if(i==1)write.csv(unique(db[,input[i, "wideVar"]]),"data/colNames.csv",row.names = F)
+    #if(i!=1){
+     # colNames=read.csv("data/colNames.csv",stringsAsFactors = F)
+      # write.csv(unique(c(colNames[,1],unique(db[,input[i, "wideVar"]]))),"data/colNames.csv",row.names = F)}
 
 
     rowSel=NULL
