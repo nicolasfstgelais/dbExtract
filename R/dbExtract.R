@@ -233,7 +233,7 @@ dbExtract_init<-function(){
     write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")}
 
   if(!file.exists("raw/riverData/dbInput.csv")){
-    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/dbInputStations.csv")))
+    dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInput.csv")))
     write.csv(dbInput,"raw/riverData/dbInput.csv")}
 
   if(!file.exists("raw/riverData/categories.csv")){
@@ -241,7 +241,7 @@ dbExtract_init<-function(){
     write.csv(categories,"raw/riverData/categories.csv")}
 
   if(!file.exists("raw/stations/dbInputStations.csv")){
-    stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/dbInputStations.csv")))
+    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/dbInputStations.csv")))
     write.csv( dbInputStations,"raw/stations/dbInputStations.csv")}
   }
 
