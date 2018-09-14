@@ -1,17 +1,4 @@
-#' dbExtract main function
-#'
-#' This function is designed to explore databases and summarize
-#' the spatial and temporal coverage of pre-selected varaibles (need to fill the input.xls file)
-#' @param inputFile inputFile filename, needs to be in the working directory
-#' @param dirPath   the path to the databases (see input file)
-#' @param startAt at which line to start in input
-#' @param append = F,
-#' @param lineSkip
-#' @param lvl
-#' @keywords cats
 #' @export
-#' @examples
-#' dbExtract ()
 dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="dbExtractOutput")
 {
 
@@ -105,47 +92,10 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
     if(!is( tryDMY ,"warning")){db[, dateId]= tryDMY }
 
 
-    if (input[i, "dateFormat"] == "C") {
-      db$date2 = NA
-      db$date2[grep("/", db[, dateId])] = LtoC(lubridate::ymd(lubridate::parse_date_time(LtoC(db[,
-                                                                                                 dateId][grep("/", db[, dateId])]), orders = "mdy H:M")))
-      db$date2[grep("-", db[, dateId])] = LtoC(lubridate::ymd(lubridate::parse_date_time(LtoC(db[,
-                                                                                                 dateId][grep("-", db[, dateId])]), orders = "ymd H:M")))
-      db[, dateId] = db$date2
-      db$date2 = NULL
-    }
-
-    if (input[i, "dateFormat"] == "D") {
-      db$date2 = NA
-      db$date2[grep("/", db[, dateId])] = LtoC(lubridate::ymd(lubridate::parse_date_time(LtoC(db[,
-                                                                                                 dateId][grep("/", db[, dateId])]), orders = "mdy")))
-      db$date2[grep("-", db[, dateId])] = LtoC(lubridate::ymd(lubridate::parse_date_time(LtoC(db[,
-                                                                                                 dateId][grep("-", db[, dateId])]), orders = "ymd")))
-      db[, dateId] = db$date2
-      db$date2 = NULL
-    }
-    if (input[i, "dateFormat"] == "E")
-    {db[, dateId] = LtoC(lubridate::ymd(LtoC(db[, dateId])))}
-
-    if (input[i, "dateFormat"] == "F") {
-      y = "YEAR"
-      d = "DAY"
-      m = "MONTH"
-      db[, dateId] = lubridate::ymd((paste(db[, c(y)], db[, c(m)], db[, c(d)],
-                                           sep = "-")))
-    }
-
-    if (input[i, "dateFormat"] == "G") {
-      db[, dateId] = lubridate::ymd(lubridate::parse_date_time(LtoC(db[, dateId]), orders = "y"))
-    }
-
 
     db$ym=paste0(format(as.Date(db[, dateId], format="%Y-%m-%d"),"%Y"),format(as.Date(db[, dateId], format="%Y-%m-%d"),"%m"))
 
-    ## import for different types of file
-   if(!is.na(input[i, "importFunction"])&input[i, "importFunction"]=="genie"){
-     db$VariablePhase=paste(db$VariableEn,db$PhaseEn)
-   }
+
 
 
     j = "doc"
@@ -167,11 +117,11 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
     }
 
 
-    # store all variables name in a vector for future reference
-    #if(i==1)write.csv(unique(db[,input[i, "wideVar"]]),"data/colNames.csv",row.names = F)
-    #if(i!=1){
-     # colNames=read.csv("data/colNames.csv",stringsAsFactors = F)
-      # write.csv(unique(c(colNames[,1],unique(db[,input[i, "wideVar"]]))),"data/colNames.csv",row.names = F)}
+    #store all variables name in a vector for future reference
+    if(i==1)write.csv(unique(db[,input[i, "wideVar"]]),"colNames.csv",row.names = F)
+    if(i!=1){
+     colNames=read.csv("colNames.csv",stringsAsFactors = F)
+      write.csv(unique(c(colNames[,1],unique(db[,input[i, "wideVar"]]))),"colNames.csv",row.names = F)}
 
 
     rowSel=NULL
@@ -253,32 +203,46 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
     if(i!=1)dbMerged=rbind(dbMerged,db[,c("station","date","variable",'value',"units","ym")])
 
   }
-  return(dbMerged)
+  dir.create("data")
+  write.csv(dbMerged,"data/dbMerged.csv")
 }
 
 #' @export
 dbExtract_init<-function(){
-  dir.create("raw/")
-  dir.create("raw/stations")
-  dir.create("raw/riverData")
-  dir.create("raw/criteria")
-  dir.create("logs")
+ if(!dir.exists("raw/")) dir.create("raw/")
+ if(!dir.exists("raw/stations"))dir.create("raw/stations")
+ if(!dir.exists("raw/riverData"))dir.create("raw/riverData")
+ if(!dir.exists("raw/criteria"))dir.create("raw/criteria")
+ if(!dir.exists("logs"))dir.create("logs")
 
-  pwqmn_2015=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2015.csv")))
-  pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2016.csv")))
-  dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInput.csv")))
-  categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/categories.csv")))
-  dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInputStations.csv")))
-  stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/stations.csv")))
-  guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
 
-  write.csv(guidelines,"raw/criteria/guidelines.csv")
-  write.csv(stations,"raw/stations/stations.csv")
-  write.csv(pwqmn_2015,"raw/riverData/pwqmn_2015.csv")
-  write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")
-  write.csv(dbInput,"raw/riverData/dbInput.csv")
-  write.csv(categories,"raw/riverData/categories.csv")
-  write.csv( dbInputStations,"raw/stations/dbInputStations.csv")
+  if(!file.exists("raw/criteria/guidelines.csv")){
+    guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
+    write.csv(guidelines,"raw/criteria/guidelines.csv")}
+
+  if(!file.exists("raw/stations/stations.csv")){
+    stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/stations.csv")))
+    write.csv(stations,"raw/stations/stations.csv")}
+
+  if(!file.exists("raw/riverData/pwqmn_2015.csv")){
+    pwqmn_2015=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2015.csv")))
+    write.csv(pwqmn_2015,"raw/riverData/pwqmn_2015.csv")}
+
+  if(!file.exists("raw/riverData/pwqmn_2016.csv")){
+    pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2016.csv")))
+    write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")}
+
+  if(!file.exists("raw/riverData/dbInput.csv")){
+    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/dbInputStations.csv")))
+    write.csv(dbInput,"raw/riverData/dbInput.csv")}
+
+  if(!file.exists("raw/riverData/categories.csv")){
+    categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/categories.csv")))
+    write.csv(categories,"raw/riverData/categories.csv")}
+
+  if(!file.exists("raw/stations/dbInputStations.csv")){
+    stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/dbInputStations.csv")))
+    write.csv( dbInputStations,"raw/stations/dbInputStations.csv")}
   }
 
 
