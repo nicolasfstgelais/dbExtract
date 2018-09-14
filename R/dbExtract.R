@@ -72,8 +72,8 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
     }
 
     if (fileType == "csv")
-    {db = read.csv(paste( LtoC(input[i, "path"]), sep = ""),
-                   1 ,skip = input$lineSkip[i],na.strings = c("", "NA"),stringsAsFactors = F)}
+      {db = read.csv(paste( LtoC(input[i, "path"]), sep = ""),
+                     1 ,skip = input$lineSkip[i],na.strings = c("", "NA"),stringsAsFactors = F)}
 
     db=as.data.frame(db)
 
@@ -264,8 +264,8 @@ dbExtract_init<-function(){
   dir.create("raw/criteria")
   dir.create("logs")
 
-  pwqmn_2015=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2015.csv")))
-  pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2016.csv")))
+  pwqmn_2015=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2015.csv")))
+  pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2016.csv")))
   dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInput.csv")))
   categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/categories.csv")))
   dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInputStations.csv")))
