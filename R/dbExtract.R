@@ -18,10 +18,10 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
   # inputs----
 
   # input
-  input = LtoC(read.csv(paste0("inputs/",inputFile),na.strings = ""))
+  input = LtoC(read.csv(paste0("raw/riverData",inputFile),na.strings = ""))
 
   #input categories to identified should also be a csv
-  categories = LtoC(read.csv(paste0("inputs/",catFile),na.strings = ""))
+  categories = LtoC(read.csv(paste0("raw/riverData/",catFile),na.strings = ""))
 
 
 
@@ -262,6 +262,7 @@ dbExtract_init<-function(){
   dir.create("raw/stations")
   dir.create("raw/riverData")
   dir.create("raw/criteria")
+  dir.create("logs")
 
   pwqmn_2015=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2015.csv")))
   pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2016.csv")))
