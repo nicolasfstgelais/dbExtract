@@ -203,7 +203,6 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
     if(i!=1)dbMerged=rbind(dbMerged,db[,c("station","date","variable",'value',"units","ym")])
 
   }
-  dir.create("data")
   write.csv(dbMerged,"data/dbMerged.csv")
 }
 
@@ -214,6 +213,8 @@ dbExtract_init<-function(){
  if(!dir.exists("raw/riverData"))dir.create("raw/riverData")
  if(!dir.exists("raw/criteria"))dir.create("raw/criteria")
  if(!dir.exists("logs"))dir.create("logs")
+  if(!dir.exists("data"))dir.create("data")
+
 
 
   if(!file.exists("raw/criteria/guidelines.csv")){
