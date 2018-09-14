@@ -267,7 +267,7 @@ dbExtract_init<-function(){
   pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2016.csv")))
   dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInput.csv")))
   categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/categories.csv")))
-
+  dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInputStations.csv")))
   stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/stations.csv")))
   guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
 
@@ -275,7 +275,9 @@ dbExtract_init<-function(){
   write.csv(stations,"raw/stations/stations.csv")
   write.csv(pwqmn_2015,"raw/riverData/pwqmn_2015.csv")
   write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")
-
+  write.csv(dbInput,"raw/riverData/dbInput.csv")
+  write.csv(categories,"raw/riverData/categories.csv")
+  write.csv( dbInputStations,"raw/stations/dbInputStations.csv")
   }
 
 
