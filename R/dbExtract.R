@@ -261,13 +261,16 @@ dbExtract_init<-function(){
   dir.create("raw/")
   dir.create("raw/stations")
   dir.create("raw/riverData")
+  dir.create("raw/criteria")
   pwqmn_2015=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2015.csv")))
   pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/pwqmn_2016.csv")))
-   stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/stations.csv")))
+  stations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/stations.csv")))
+  guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
 
+  write.csv(guidelines,"raw/criteria/guidelines.csv")
   write.csv(stations,"raw/stations/stations.csv")
-  write.csv(pwqmn_2015,"raw/stations/pwqmn_2015.csv")
-  write.csv(pwqmn_2016,"raw/stations/pwqmn_2016.csv")
+  write.csv(pwqmn_2015,"raw/riverData/pwqmn_2015.csv")
+  write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")
 
   }
 
