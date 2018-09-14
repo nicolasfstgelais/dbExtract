@@ -259,7 +259,7 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
 #' @export
 dbExtract_init<-function(){
   dir.create("raw")
-  stations=read.csv("raw/stations/read.csv")
+  stations=read.csv("raw/stations/stations.csv")
   write.csv(stations,"stations.csv")
   }
 
