@@ -214,6 +214,8 @@ dbExtract_init<-function(){
  if(!dir.exists("raw/criteria"))dir.create("raw/criteria")
  if(!dir.exists("logs"))dir.create("logs")
   if(!dir.exists("data"))dir.create("data")
+  if(!dir.exists("raw/inputs"))dir.create("raw/inputs")
+
 
   if(!file.exists("raw/criteria/guidelines.csv")){
     guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
@@ -231,17 +233,17 @@ dbExtract_init<-function(){
     pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2016.csv")))
     write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")}
 
-  if(!file.exists("raw/riverData/dbInput.csv")){
-    dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/dbInput.csv")))
-    write.csv(dbInput,"raw/riverData/dbInput.csv")}
+  if(!file.exists("raw/inputs/dbInput.csv")){
+    dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInput.csv")))
+    write.csv(dbInput,"raw/inputs/dbInput.csv")}
 
-  if(!file.exists("raw/riverData/categories.csv")){
-    categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/categories.csv")))
-    write.csv(categories,"raw/riverData/categories.csv")}
+  if(!file.exists("raw/inputs/categories.csv")){
+    categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/categories.csv")))
+    write.csv(categories,"raw/inputs/categories.csv")}
 
-  if(!file.exists("raw/stations/dbInputStations.csv")){
-    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/stations/dbInputStations.csv")))
-    write.csv( dbInputStations,"raw/stations/dbInputStations.csv")}
+  if(!file.exists("raw/inputs/dbInputStations.csv")){
+    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInputStations.csv")))
+    write.csv( dbInputStations,"raw/inputs/dbInputStations.csv")}
   }
 
 
