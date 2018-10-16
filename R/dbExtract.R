@@ -214,14 +214,7 @@ dbExtract_init<-function(){
  if(!dir.exists("raw/criteria"))dir.create("raw/criteria")
  if(!dir.exists("logs"))dir.create("logs")
   if(!dir.exists("data"))dir.create("data")
-  if(!dir.exists("R"))dir.create("R")
 
-
-  if(!file.exists("R/main.R")){
-    main=read.table(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/R/main.R")),header=F,stringsAsFactors = F)
-    writeLines(c( main[,1], "R/main.R"))
-    #close(" R/output.R")
-    }
 
   if(!file.exists("raw/criteria/guidelines.csv")){
     guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
