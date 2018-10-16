@@ -215,7 +215,6 @@ dbExtract_init<-function(){
  if(!dir.exists("logs"))dir.create("logs")
   if(!dir.exists("data"))dir.create("data")
 
-
   if(!file.exists("raw/criteria/guidelines.csv")){
     guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
     write.csv(guidelines,"raw/criteria/guidelines.csv")}
