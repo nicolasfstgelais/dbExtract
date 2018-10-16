@@ -5,10 +5,10 @@ dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="
   # inputs----
 
   # input
-  input = LtoC(read.csv(paste0("raw/riverData/",inputFile),na.strings = ""))
+  input = LtoC(read.csv(paste0("raw/input/",inputFile),na.strings = ""))
 
   #input categories to identified should also be a csv
-  categories = LtoC(read.csv(paste0("raw/riverData/",catFile),na.strings = ""))
+  categories = LtoC(read.csv(paste0("raw/input/",catFile),na.strings = ""))
 
 
 
