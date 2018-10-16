@@ -5,7 +5,7 @@ DBnormStations<- function(inputFile = "dbInputStations.csv")
   # inputs----
 
   # input
-  input = LtoC(read.csv(paste0("raw/input/",inputFile),na.strings = ""))
+  input = LtoC(read.csv(paste0("raw/inputs/",inputFile),na.strings = ""))
 
   for(i in 1:nrow(input)){
 
