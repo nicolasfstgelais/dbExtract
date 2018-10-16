@@ -218,8 +218,8 @@ dbExtract_init<-function(){
 
 
   if(!file.exists("R/main.R")){
-    guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/R/main.csv")))
-    write.csv(guidelines,"R/main.R")}
+    main=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/R/main.R")))
+    write.csv(main,"R/main.R")}
 
   if(!file.exists("raw/criteria/guidelines.csv")){
     guidelines=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/criteria/guidelines.csv")))
