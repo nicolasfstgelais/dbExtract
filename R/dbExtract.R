@@ -1,5 +1,5 @@
 #' @export
-dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv",output="wq")
+dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",output="wq")
 {
 
   # inputs----
@@ -254,17 +254,17 @@ dbExtract_init<-function(){
     pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2016.csv")))
     write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")}
 
-  if(!file.exists("raw/inputs/dbInput.csv")){
-    dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInput.csv")))
-    write.csv(dbInput,"raw/inputs/dbInput.csv")}
+  if(!file.exists("raw/inputs/temporalDB.csv")){
+    temporalDB=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/temporalDB.csv")))
+    write.csv(temporalDB,"raw/inputs/temporalDB.csv")}
 
   if(!file.exists("raw/inputs/categories.csv")){
     categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/categories.csv")))
     write.csv(categories,"raw/inputs/categories.csv")}
 
-  if(!file.exists("raw/inputs/dbInput_stations.csv")){
-    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInput_stations.csv")))
-    write.csv( dbInputStations,"raw/inputs/dbInput_stations.csv")}
+  if(!file.exists("raw/inputs/stationsDB.csv")){
+    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/stationsDB.csv")))
+    write.csv( dbInputStations,"raw/inputs/stationsDB.csv")}
   }
 
 
