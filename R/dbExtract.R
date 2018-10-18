@@ -217,8 +217,8 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
     db=norm.units(mat=db,conc ="value",units = "units")}
 
     colSel=c("station","variable",'value')
-    if(!is.na(input$units[i]))c(colSel,"units")
-    if(!is.na(input$dateID[i]))c(colSel,"date","ym")
+    if(!is.na(input$units[i]))colSel=c(colSel,"units")
+    if(!is.na(input$dateID[i]))colSel=c(colSel,"date","ym")
 
     if(i==1)dbMerged=db[,colSel]
     if(i!=1)dbMerged=rbind(dbMerged,db[,colSel])
