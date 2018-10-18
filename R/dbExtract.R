@@ -262,9 +262,9 @@ dbExtract_init<-function(){
     categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/categories.csv")))
     write.csv(categories,"raw/inputs/categories.csv")}
 
-  if(!file.exists("raw/inputs/dbInputStations.csv")){
-    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInputStations.csv")))
-    write.csv( dbInputStations,"raw/inputs/dbInputStations.csv")}
+  if(!file.exists("raw/inputs/dbInput_stations.csv")){
+    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInput_stations.csv")))
+    write.csv( dbInputStations,"raw/inputs/dbInput_stations.csv")}
   }
 
 
