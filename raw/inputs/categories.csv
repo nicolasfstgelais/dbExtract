@@ -1,25 +1,25 @@
-Lvl1,Lvl2,Keywords
-"1,2-dichloroethane","1,2-dichloroethane","1,2-dichloroethane"
-arsenic,arsenic,(?=.*(arsenic))(?!.*extract)(?!.*dissolved)|(?=.*AS-EXT)|As-Tot
-atrazine,atrazine,(?=.*(atrazine))(?=.*total)(?!.*de-ethyled)(?!.*de-isopropyled)
-bromoxynil,bromoxynil,bromoxynil
-cadmium,cadmium,(?=.*(cadmium))(?!.*extract)(?!.*dissolved)(?!.*particul)|(?=.*CD-EXT)|Cd-Tot
-chl,chla,(?=.*(CHLOROPHYLL))(?!.*CHLOROPHYLL-B)(?!.*EXTRBLE)|Chl-a
-dicamba,dicamba,dicamba
-dichloromethane,dichloromethane,Dichloromethane
-diclofop-methyl,diclofop-methyl,(?=.*(diclofop-methyl))(?=.*total)
-E.coli,e.coli,ESCHERICHIA|(?=.*(fecal))(?!.*strepto)|ECOLI
-ethylbenzene,ethylbenzene,Ethylbenzene
-fluoride,fluoride,fluoride|F-Dis
-lead,lead,(?=.*(lead))(?!.*extract)(?!.*dissolved)(?!.*particulate)|(?=.*plomb)(?!.*extract)|(?=.*PB-EXT)|Pb-Tot
-metolachlor,metolachlor,(?=.*(metolachlor))(?=.*total)
-metribuzine,metribuzine,(?=.*(metribuzin))(?=.*total)
-nitrate,nitrate,(?=.*(nitrate))(?=.*total)
-nitrite,nitrite,nitrite
-simazine,simazine,(?=.*(simazine))(?=.*total)
-tn,tn,(?=.*(nitrogen))(?=.*total)(?!.*dissolved)|(?=.*N-TOT)|TN
-toluene,toluene,(?=.*(toluene))(?!.* TRICHLOROTOLUENE)
-Total coliforms<U+00A0>,Total coliforms<U+00A0>,(?=.*(coli))(?=.*total)
-tp,tp,(?=.*(phosphorus))(?=.*total)(?!.*dissolved)|(?=.*P-T-PER)|TP
-uranium,uranium,(?=.*(uranium))(?!.*extract)(?!.*dissolved)|(?=.*U-EXT)
-cyanide,cyanide,cyanide
+normVocab,Keywords
+"1,2-dichloroethane","1,2-dichloroethane"
+arsenic,(?=.*(arsenic))(?!.*extract)(?!.*dissolved)|(?=.*AS-EXT)|As-Tot
+atrazine,(?=.*(atrazine))(?=.*total)(?!.*de-ethyled)(?!.*de-isopropyled)
+bromoxynil,bromoxynil
+cadmium,(?=.*(cadmium))(?!.*extract)(?!.*dissolved)(?!.*particul)|(?=.*CD-EXT)|Cd-Tot
+chla,(?=.*(CHLOROPHYLL))(?!.*CHLOROPHYLL-B)(?!.*EXTRBLE)|Chl-a
+dicamba,dicamba
+dichloromethane,Dichloromethane
+diclofop-methyl,(?=.*(diclofop-methyl))(?=.*total)
+e.coli,ESCHERICHIA|(?=.*(fecal))(?!.*strepto)|ECOLI
+ethylbenzene,Ethylbenzene
+fluoride,fluoride|F-Dis
+lead,(?=.*(lead))(?!.*extract)(?!.*dissolved)(?!.*particulate)|(?=.*plomb)(?!.*extract)|(?=.*PB-EXT)|Pb-Tot
+metolachlor,(?=.*(metolachlor))(?=.*total)
+metribuzine,(?=.*(metribuzin))(?=.*total)
+nitrate,(?=.*(nitrate))(?=.*total)
+nitrite,nitrite
+simazine,(?=.*(simazine))(?=.*total)
+tn,(?=.*(nitrogen))(?=.*total)(?!.*dissolved)|(?=.*N-TOT)|TN
+toluene,(?=.*(toluene))(?!.* TRICHLOROTOLUENE)
+Total coliforms<U+00A0>,(?=.*(coli))(?=.*total)
+tp,(?=.*(phosphorus))(?=.*total)(?!.*dissolved)|(?=.*P-T-PER)|TP
+uranium,(?=.*(uranium))(?!.*extract)(?!.*dissolved)|(?=.*U-EXT)
+cyanide,cyanide

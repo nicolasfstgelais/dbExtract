@@ -1,0 +1,3 @@
+path,sheet,stationID,dateID,dateFormat,units,wideVar,wideResults,NAvalue,transpose,Notes,lineSkip,importFunction
+raw\stations\PWQMN1.xlsx,,STATION,,,,,,,,,,
+raw\stations\Water-Qual-Eau-Sites-National.csv,,SITE_NO,,,,,,,,,,
