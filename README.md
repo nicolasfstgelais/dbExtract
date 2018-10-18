@@ -27,10 +27,18 @@ In the raw folder, read each README to make sure that the inputs are what the fu
 
 ## Normalize stations file
  ```{r}
-`DBnormStations()
+DBnormStations()
  ``` 
  
  `DBnormStations()`  normalize the stations data based on *dbInputStations.csv* and create *data/stations_norm.csv* as an output
 
-## Evaluate each service for each site
+## Prepare data
+ ```{r}
+dataPrep()
+ ``` 
+ 
+## Classify sites
+ ```{r}
+sitesClassification()
+ ``` 
 `sitesClassification()` evaluate for each service in *raw/criteria/guideline.csv*
