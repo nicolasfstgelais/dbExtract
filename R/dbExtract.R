@@ -109,22 +109,22 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",outpu
     #-  j=selCat[1]
     c2=1
     parameters=data.frame(param=NA,ctrl=NA,KeyW=NA)
-    #params=unique(db[,input$wideVar[i]])
+    #params=unique(db[,input$parameters[i]])
     c3=1
 
-    if(is.na(input[i, "wideVar"])){
+    if(is.na(input[i, "parameters"])){
       gat=colnames(db)[-which(colnames(db)==input$stationID[i])]
       db=tidyr::gather_(db,"variable","value",gat)
       searchVec=colnames(db)
-      input$wideVar[i]="variable"
-      input$wideResults[i]="value"
+      input$parameters[i]="variable"
+      input$values[i]="value"
     }
 
 
-    if(!is.na(input[i, "wideVar"])){
-      searchVec=LtoC(unique(db[,LtoC(input$wideVar[i])]))
+    if(!is.na(input[i, "parameters"])){
+      searchVec=LtoC(unique(db[,LtoC(input$parameters[i])]))
     }
-    if(is.na(input[i, "wideVar"])){
+    if(is.na(input[i, "parameters"])){
       searchVec=colnames(db)
     }
 
@@ -166,12 +166,12 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",outpu
 
       #change in the db with the control vocab
 
-      if(!is.na(input[i, "wideVar"])){
-        rowSel= c(rowSel,which(db[,input$wideVar[i]]%in% searchVec[colsTemp]))
-        db[(db[,input$wideVar[i]])%in% searchVec[colsTemp],input$wideVar[i]]=parameters[c3,"ctrl"]
+      if(!is.na(input[i, "parameters"])){
+        rowSel= c(rowSel,which(db[,input$parameters[i]]%in% searchVec[colsTemp]))
+        db[(db[,input$parameters[i]])%in% searchVec[colsTemp],input$parameters[i]]=parameters[c3,"ctrl"]
       }
 
-      if(is.na(input[i, "wideVar"])){
+      if(is.na(input[i, "parameters"])){
         colnames(db)[colnames(db)==searchVec[colsTemp]]=parameters[c3,"ctrl"]
       }
 
@@ -187,19 +187,19 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",outpu
 
     #select only relevant rows
     db=db[rowSel,]
-    db=db[!is.na(db[,input$wideResults[i]]),]
-    db=db[(db[,input$wideResults[i]])!="ND",]
+    db=db[!is.na(db[,input$values[i]]),]
+    db=db[(db[,input$values[i]])!="ND",]
 
 
     # remove negative values, problem for longitude, but in water quality there is negative nalues as error code need to check
-    #-db=db[db[,input$wideResults[i]]>0,]
+    #-db=db[db[,input$values[i]]>0,]
 
 
     #norm colnames
     if(!is.na(input$dateID[i])){colnames(db)[which(colnames(db)==input$dateID[i])]="date"}
     if(!is.na(input$units[i])){colnames(db)[which(colnames(db)==input$units[i])]="units"}
-    colnames(db)[which(colnames(db)==input$wideVar[i])]="variable"
-    colnames(db)[which(colnames(db)==input$wideResults[i])]="value"
+    colnames(db)[which(colnames(db)==input$parameters[i])]="variable"
+    colnames(db)[which(colnames(db)==input$values[i])]="value"
     colnames(db)[which(colnames(db)==input$stationID[i])]="station"
 
     if (!is.na(input[i, "NAvalue"]))
