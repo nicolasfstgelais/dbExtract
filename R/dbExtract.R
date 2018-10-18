@@ -1,5 +1,5 @@
 #' @export
-dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",output="wq")
+dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
 {
 
   # inputs----
@@ -224,7 +224,8 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",outpu
     if(i!=1)dbMerged=rbind(dbMerged,db[,colSel])
 
   }
-  write.csv(dbMerged,paste0("data/dbMerged_","wq",".csv"))
+  out=strsplit(inputFile,"\\.")[[1]][1]
+  write.csv(dbMerged,paste0("data/dbExtract_",out,".csv"))
 }
 
 #' @export
