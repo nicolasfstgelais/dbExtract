@@ -114,7 +114,7 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv",outpu
 
     if(is.na(input[i, "wideVar"])){
       gat=colnames(db)[-which(colnames(db)==input$stationID[i])]
-      db=gather_(db,"variable","value",gat)
+      db=tidyr::gather_(db,"variable","value",gat)
       searchVec=colnames(db)
       input$wideVar[i]="variable"
       input$wideResults[i]="value"
