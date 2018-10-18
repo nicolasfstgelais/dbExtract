@@ -225,7 +225,7 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
 
   }
   out=strsplit(inputFile,"\\.")[[1]][1]
-  write.csv(dbMerged,paste0("data/dbExtract_",out,".csv"))
+  write.csv(dbMerged,paste0("data/dbExtract_",out,".csv"),row.names = F)
 }
 
 #' @export
