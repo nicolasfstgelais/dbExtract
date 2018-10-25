@@ -1,5 +1,5 @@
 #' @export
-dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
+dbExtract<- function(inputFile = "dbInput.csv",catFile="categories.csv")
 {
 
   # inputs----
@@ -8,8 +8,6 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
   input = LtoC(read.csv(paste0("raw/inputs/",inputFile),na.strings = ""))
 
   #input categories to identified should also be a csv
-  #if(exists("categories")){
-
   categories = LtoC(read.csv(paste0("raw/inputs/",catFile),na.strings = ""))
 
   i=1
@@ -17,13 +15,11 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
   for(i in 1:nrow(input)){
 
     print(input[i,"path"])
-    #if(file.exists(paste0(input$name[i],"_norm.csv"))){next}
 
 
     sheetTemp = do.call(rbind, strsplit(LtoC(input[i, "sheet"]), ";"))
     if(!is.na(sheetTemp)){if(sheetTemp=="NA"){sheetTemp=NA}}
     lineSkip=input[i, "lineSkip"]
-    if(is.na( lineSkip))lineSkip=0
     fileType=input[i, "type"]
 
     if(length(grep("csv",LtoC(input[i, "path"])))!=0){fileType="csv"}
@@ -51,22 +47,22 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
         if (first)
         {
 
-          db = readxl::read_excel(paste( LtoC(input[i, "path"]),sep=""), sheet = sheet,skip = lineSkip)}
+          db = readxl::read_excel(paste( LtoC(input[i, "path"]),sep=""), sheet = sheet,skip = input$lineSkip[i])}
         if (!first)
-        {db = rbind(db, readxl::read_excel(paste( LtoC(input[i, "path"]), sep = ""), sheet = sheet,skip = lineSkip)[, colnames(db)])}
+        {db = rbind(db, readxl::read_excel(paste( LtoC(input[i, "path"]), sep = ""), sheet = sheet,skip = input$lineSkip[i])[, colnames(db)])}
         first = F
       }
     }
 
     if (fileType == "csv")
       {db = read.csv(paste( LtoC(input[i, "path"]), sep = ""),
-                     1 ,skip = lineSkip,na.strings = c("", "NA"),stringsAsFactors = F)}
+                     1 ,skip = input$lineSkip[i],na.strings = c("", "NA"),stringsAsFactors = F)}
 
     db=as.data.frame(db)
 
 
 
-    # this is for db with only one station
+    # this is for db with only one
     if (is.na(input[i, "stationID"]) | input[i, "stationID"] == "NA") {
       db$stationId = "A"
       stationId = "stationId"
@@ -74,18 +70,11 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
       stationId = LtoC(input[i, "stationID"])
     }
 
+    dateId=input$dateID[i]
 
     db = db[rowSums(is.na(db)) != ncol(db), ]  #remove columns with only NAs
     db = db[, colSums(is.na(db)) != nrow(db)]  #remove rows with only NAs
-
-    # this block is executed only if the dateId isn't NA
-    if(!is.na(input$dateID[i])){
-
-    dateId=input$dateID[i]
-
     db = db[!is.na(db[, dateId]), ]  #remove rows with only NAs
-
-
 
     db[, dateId]=as.data.frame(do.call(rbind,strsplit(LtoC(db[, dateId])," ")))[,1]
 
@@ -101,48 +90,43 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
 
 
     db$ym=paste0(format(as.Date(db[, dateId], format="%Y-%m-%d"),"%Y"),format(as.Date(db[, dateId], format="%Y-%m-%d"),"%m"))
-}
+
+
+
 
     j = "doc"
-    cats=LtoC(unique(categories[,"normVocab"]))
+    lvl="Lvl2"
+    cats=LtoC(unique(categories[,lvl]))
+    lvl1=(categories[,"Lvl1"])
 
     #-  j=selCat[1]
     c2=1
     parameters=data.frame(param=NA,ctrl=NA,KeyW=NA)
-    #params=unique(db[,input$parameters[i]])
+    #params=unique(db[,input$wideVar[i]])
     c3=1
 
-    if(is.na(input[i, "parameters"])){
-      gat=colnames(db)[-which(colnames(db)==input$stationID[i])]
-      db=tidyr::gather_(db,"variable","value",gat)
-      searchVec=colnames(db)
-      input$parameters[i]="variable"
-      input$values[i]="value"
+    if(!is.na(input[i, "wideVar"])){
+      searchVec=LtoC(unique(db[,LtoC(input$wideVar[i])]))
     }
-
-
-    if(!is.na(input[i, "parameters"])){
-      searchVec=LtoC(unique(db[,LtoC(input$parameters[i])]))
-    }
-    if(is.na(input[i, "parameters"])){
+    if(is.na(input[i, "wideVar"])){
       searchVec=colnames(db)
     }
 
 
     #store all variables name in a vector for future reference
-    if(i==1)write.csv(unique(searchVec),"colNames.csv",row.names = F)
+    if(i==1)write.csv(unique(db[,input[i, "wideVar"]]),"colNames.csv",row.names = F)
     if(i!=1){
      colNames=read.csv("colNames.csv",stringsAsFactors = F)
-      write.csv(unique(c(colNames[,1],unique(searchVec))),"colNames.csv",row.names = F)}
+      write.csv(unique(c(colNames[,1],unique(db[,input[i, "wideVar"]]))),"colNames.csv",row.names = F)}
 
 
     rowSel=NULL
-    j="longitude"
+    j="dicamba"
     for (j in cats) {
       # loop to search for the kerwords in order, maybe switch from | to  ; between keywords
 
       # create a list of pattern to look for
-      pattTemp = paste(categories[categories[,"normVocab"]==j, "Keywords"], collapse = ";")
+      pattTemp = paste(categories[categories[,lvl]==j, "Keywords"], collapse = ";")
       #pattTemp = gsub("\\|",";",pattTemp)
       pattList=unlist(strsplit(pattTemp,";"))
 
@@ -164,18 +148,11 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
       parameters[c3,"ctrl"]=j
 
 
-      #change in the db with the control vocab
+      #change in the db
 
-      if(!is.na(input[i, "parameters"])){
-        rowSel= c(rowSel,which(db[,input$parameters[i]]%in% searchVec[colsTemp]))
-        db[(db[,input$parameters[i]])%in% searchVec[colsTemp],input$parameters[i]]=parameters[c3,"ctrl"]
-      }
+      rowSel= c(rowSel,which(db[,input$wideVar[i]]%in% searchVec[colsTemp]))
 
-      if(is.na(input[i, "parameters"])){
-        colnames(db)[colnames(db)==searchVec[colsTemp]]=parameters[c3,"ctrl"]
-      }
-
-
+      db[(db[,input$wideVar[i]])%in% searchVec[colsTemp],input$wideVar[i]]=parameters[c3,"ctrl"]
       c3=c3+1
       #log names
       #print(paste("\t",j,":",pattList[r]))
@@ -187,45 +164,42 @@ dbExtract<- function(inputFile = "temporalDB.csv",catFile="categories.csv")
 
     #select only relevant rows
     db=db[rowSel,]
-    db=db[!is.na(db[,input$values[i]]),]
-    db=db[(db[,input$values[i]])!="ND",]
+    db=db[!is.na(db[,input$wideResults[i]]),]
+    db=db[(db[,input$wideResults[i]])!="ND",]
 
 
-    # remove negative values, problem for longitude, but in water quality there is negative nalues as error code need to check
-    #-db=db[db[,input$values[i]]>0,]
+    db=db[db[,input$wideResults[i]]>0,]
 
 
     #norm colnames
-    if(!is.na(input$dateID[i])){colnames(db)[which(colnames(db)==input$dateID[i])]="date"}
-    if(!is.na(input$units[i])){colnames(db)[which(colnames(db)==input$units[i])]="units"}
-    colnames(db)[which(colnames(db)==input$parameters[i])]="variable"
-    colnames(db)[which(colnames(db)==input$values[i])]="value"
+    colnames(db)[which(colnames(db)==input$dateID[i])]="date"
+    colnames(db)[which(colnames(db)==input$units[i])]="units"
+    colnames(db)[which(colnames(db)==input$wideVar[i])]="variable"
+    colnames(db)[which(colnames(db)==input$wideResults[i])]="value"
     colnames(db)[which(colnames(db)==input$stationID[i])]="station"
+
+
+
 
     if (!is.na(input[i, "NAvalue"]))
     {db[db$value == input[i, "NAvalue"],"value"] = NA}
 
 
 
-    #-lat=grep("lat",colnames(db),ignore.case = T)
-    #-long=grep("long",colnames(db),ignore.case = T)
+    lat=grep("lat",colnames(db),ignore.case = T)
+    long=grep("long",colnames(db),ignore.case = T)
 
-    #-if(length(lat)>0)colnames(db)[lat]="lat"
-    #-if(length(long)>0)colnames(db)[long]="long"
+    if(length(lat)>0)colnames(db)[lat]="lat"
+    if(length(long)>0)colnames(db)[long]="long"
 
-    if(!is.na(input$units[i])){
-    db=norm.units(mat=db,conc ="value",units = "units")}
 
-    colSel=c("station","variable",'value')
-    if(!is.na(input$units[i]))colSel=c(colSel,"units")
-    if(!is.na(input$dateID[i]))colSel=c(colSel,"date","ym")
+    db=norm.units(mat=db,conc ="value",units = "units")
 
-    if(i==1)dbMerged=db[,colSel]
-    if(i!=1)dbMerged=rbind(dbMerged,db[,colSel])
+    if(i==1)dbMerged=db[,c("station","date","variable",'value',"units","ym")]
+    if(i!=1)dbMerged=rbind(dbMerged,db[,c("station","date","variable",'value',"units","ym")])
 
   }
-  out=strsplit(inputFile,"\\.")[[1]][1]
-  write.csv(dbMerged,paste0("data/dbExtract_",out,".csv"),row.names = F)
+  write.csv(dbMerged,"data/dbMerged.csv")
 }
 
 #' @export
@@ -255,17 +229,17 @@ dbExtract_init<-function(){
     pwqmn_2016=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/riverData/pwqmn_2016.csv")))
     write.csv(pwqmn_2016,"raw/riverData/pwqmn_2016.csv")}
 
-  if(!file.exists("raw/inputs/temporalDB.csv")){
-    temporalDB=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/temporalDB.csv")))
-    write.csv(temporalDB,"raw/inputs/temporalDB.csv")}
+  if(!file.exists("raw/inputs/dbInput.csv")){
+    dbInput=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInput.csv")))
+    write.csv(dbInput,"raw/inputs/dbInput.csv")}
 
   if(!file.exists("raw/inputs/categories.csv")){
     categories=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/categories.csv")))
     write.csv(categories,"raw/inputs/categories.csv")}
 
-  if(!file.exists("raw/inputs/stationsDB.csv")){
-    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/stationsDB.csv")))
-    write.csv( dbInputStations,"raw/inputs/stationsDB.csv")}
+  if(!file.exists("raw/inputs/dbInputStations.csv")){
+    dbInputStations=read.csv(textConnection(RCurl::getURL("https://raw.githubusercontent.com/nicolasfstgelais/dbExtract/master/raw/inputs/dbInputStations.csv")))
+    write.csv( dbInputStations,"raw/inputs/dbInputStations.csv")}
   }
 
 

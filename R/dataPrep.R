@@ -1,14 +1,14 @@
 #' @export
-dataPrep <- function(stationsPath="data/stations_norm.csv",guidePath="raw/criteria/guidelines.csv")
+dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/criteria/guidelines.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym")
 {
   ## Read files
   #source("R/functions.R")
-  db=read.csv("data/dbMerged.csv",stringsAsFactors = F)
-  range(db$date)
+  db=read.csv(temporalPath,stringsAsFactors = F)
+
   stations=read.csv(stationsPath,stringsAsFactors = F,row.names = 1)
   stations=read.csv(stationsPath,stringsAsFactors = F)
-  stations[which(duplicated(stations$station)),]
-  length(unique(stations$station))
+  #-stations[which(duplicated(stations$station)),]
+  #-length(unique(stations$station))
 
   guide=read.csv(guidePath,stringsAsFactors=FALSE)
 
@@ -23,7 +23,14 @@ dataPrep <- function(stationsPath="data/stations_norm.csv",guidePath="raw/criter
   fileName=paste0("logs/dataPrep",format(Sys.time(), "%Y-%m-%d_%H%M"),".log")
   cat(as.character(Sys.time()), file=fileName, append=T, sep = "\n")
 
+  cat(paste("\t \Time range \n"), file=fileName, append=T, sep = "\n")
+
+  range(db$date)
+
   cat(paste("\t \nBefore \n"), file=fileName, append=T, sep = "\n")
+
+  cat(paste("\t \nBefore \n"), file=fileName, append=T, sep = "\n")
+
 
   selVar=unique(db$variable)
   for(i in 1:length(selVar)){
@@ -48,55 +55,61 @@ dataPrep <- function(stationsPath="data/stations_norm.csv",guidePath="raw/criter
   mo=LtoN(stringr::str_sub(db$ym, start= -2))
   mo=formatC(mo, width = 2, format = "d", flag = "0")
 
+
+if(by=="ym"){
   db_mean_ym<- plyr::ddply(db, c("station","ym","variable"), plyr::summarise,
                            value    = mean(value))
+
+  db_wide<- tidyr::spread(data = db_mean_ym,
+                             key = variable,
+                             value = value)
+
+  rownames(db_wide)=paste0(db_wide$station,db_wide$ym)
+  db_wide=db_wide[,-c(1,2)]
+}
+  if(by=="d"){
 
   db_mean_d<- plyr::ddply(db, c("station","date","variable"), plyr::summarise,
                           value    = mean(value))
 
+  db_wide<- tidyr::spread(data = db_mean_d,
+                            key = variable,
+                            value = value)
+
+  rownames(db_wide)=paste0(db_wide$station,db_wide$d)
+  db_wide=db_wide[,-c(1,2)]
+  }
+
+  if(by=="m"){
 
   db_mean_m<- plyr::ddply(cbind(db,mo), c("station","mo","variable"), plyr::summarise,
                           value    = mean(value))
-
-
-  db_wide_d<- tidyr::spread(data = db_mean_d,
-                            key = variable,
-                            value = value)
-
-  db_wide_ym<- tidyr::spread(data = db_mean_ym,
-                             key = variable,
-                             value = value)
-
   db_wide_m<- tidyr::spread(data = db_mean_m,
                             key = variable,
                             value = value)
-
-
-  rownames(db_wide_ym)=paste0(db_wide_ym$station,db_wide_ym$ym)
-  db_wide_ym=db_wide_ym[,-c(1,2)]
-
-  rownames(db_wide_d)=paste0(db_wide_d$station,db_wide_d$date)
-  db_wide_d=db_wide_d[,-c(1,2)]
-
-  rownames(db_wide_m)=paste0(db_wide_m$station,db_wide_m$mo)
-  db_wide_m=db_wide_m[,-c(1,2)]
-
-
-  sites=unique(stringr::str_sub(rownames(db_wide_ym),start=0,end=-7))
-
-  location=matrix(NA,length(sites),2,dimnames=list(sites,c("long","lat")))
-
-  for(i in rownames(location))
-  {
-    if(length(stations[stations$station==i,"latitude"])==0)next
-    location[i,"lat"]=stations[stations$station==i,"latitude"]
-    location[i,"long"]=stations[stations$station==i,"longitude"]
-  }
-  location=as.data.frame(location)
+  rownames(db_wide)=paste0(db_wide$station,db_wide$m)
+  db_wide=db_wide[,-c(1,2)]
+}
 
 
 
-  save(db_wide_m,db_wide_d,db_wide_ym,stations,guide,location,file=paste0("data/dataPrep.RData"))
+  #-sites=unique(stringr::str_sub(rownames(db_wide),start=0,end=-7))
+
+  #-location=matrix(NA,length(sites),2,dimnames=list(sites,c("long","lat")))
+
+  #-for(i in rownames(location))
+  #-{
+    #-if(length(stations[stations$station==i,"latitude"])==0)next
+    #-location[i,"lat"]=stations[stations$station==i,"latitude"]
+    #-location[i,"long"]=stations[stations$station==i,"longitude"]
+  #-}
+#-  location=as.data.frame(location)
+
+ write.csv(db_wide,"data/temporalDBwide.csv",row.names = F)
+ write.csv(guide,"data/guidelines_norm.csv",row.names = F)
+
+
+  #save(db_wide_m,db_wide_d,db_wide_ym,stations,guide,location,file=paste0("data/dataPrep.RData"))
 }
 
 
