@@ -48,6 +48,6 @@ dataPrep(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/criteria/gu
  
 ## Classify sites
  ```{r}
-sitesClassification()
+sitesClassification(temporalPath="data/temporalDBwide.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic")
  ``` 
-`sitesClassification()` evaluate for each service in *raw/criteria/guideline.csv*
+`sitesClassification()` evaluate for each service seleted in the *selSpaces* argument (by default irrigation, livestock, drink, aquatic, recreational, oligotrophic, mesotrophic et eutrophic) based on the temporal database
