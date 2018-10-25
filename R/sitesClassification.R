@@ -1,10 +1,12 @@
 #' @export
-sitesClassification<-function(db_wide="db_wide_ym")
+sitesClassification<-function(temporalPath="data/temporalDBwide.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"))
 {
-  load(paste0("data/dataPrep.RData"))
-  db_wide=get(db_wide)
+  #load(paste0("data/dataPrep.RData"))
+  db_wide=read.csv(temporalPath,header=T)
   selVar=colnames(db_wide)
-  selSpaces=unique(guide$ES)
+  guide= read.csv("data/guidelines_norm.csv")
+
+  #-selSpaces=unique(guide$ES)
 
 
   # forced to have fc measures
@@ -26,9 +28,6 @@ sitesClassification<-function(db_wide="db_wide_ym")
   c=1
   #pb <- txtProgressBar(min = 0, max = nrow(sitesClass), style = 3)
 
-  pb <- txtProgressBar(max = nrow(sitesClass)*length(selVar), style = 3)
-  progress <- function(n) setTxtProgressBar(pb, n)
-  opts <- list(progress = progress)
   class=rep(NA,length(selSpaces));names(class)=selSpaces
 
   sitesClass_raw=list()
@@ -64,13 +63,13 @@ sitesClassification<-function(db_wide="db_wide_ym")
 
     sitesClass_raw[[j]]=out
 
-    if(file.exists(paste0("data/sitesClass.RData"))){
-      load(paste0("data/sitesClass.RData"))
+    if(file.exists(paste0("data/sitesClass.csv"))){
+      sitesClass=read.csv("data/sitesClass.csv")
     }
     if(j%in%colnames(sitesClass))
     {
       sitesClass[,j]=apply(out,1,min,na.rm=T)
-      sitesClass[is.infinite(sitesClass)]=NA
+      sitesClass[is.infinite(as.matrix(sitesClass))]=NA
 
     }
     if(!j%in%colnames(sitesClass))
@@ -83,8 +82,7 @@ sitesClassification<-function(db_wide="db_wide_ym")
 
 
     #-save(sitesClass,sitesClass_raw,critLim,file=paste0("data/sitesClass",selOut,".RData"))
-
-    save(sitesClass,file=paste0("data/sitesClass.RData"))
+    write.csv(sitesClass,"data/sitesClass.csv")
 
     #-indic<-function(x)length(which(is.nan(x)))/(length(which(is.nan(x)))+(length(which(is.infinite(x)))))
 
@@ -103,10 +101,9 @@ sitesClassification<-function(db_wide="db_wide_ym")
     print(j)
   }
 
-  save(sitesClass_raw,file=paste0("data/sitesClass_raw.RData"))
-  save( measFreq,limFreq,file=paste0("data/critLim.RData"))
-  close(pb)
-
+  write.csv(sitesClass_raw,"data/sitesClass_raw.csv")
+  write.csv(measFreq,"data/measFreq.csv")
+  write.csv(limFreq,"data/limFreq.csv")
 
 }
 
