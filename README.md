@@ -42,8 +42,9 @@ If thedirectory where you want to initialize dbExtract is different from the wor
 
 ## Prepare data
  ```{r}
-dataPrep()
+dataPrep(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/criteria/guidelines.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym") to *data/temporalDBwide.csv"
  ``` 
+ This function prepare the different data source needed for the classification step. First the *guidelines.csv* is normalized. Units are checked in the *dbExtract_temporalDB.csv* and the data is summarized either by date (by="d"), year+month (by="ym") or month by="m") and exported in a wide format 
  
 ## Classify sites
  ```{r}
