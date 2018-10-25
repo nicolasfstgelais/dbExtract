@@ -23,7 +23,7 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw
   fileName=paste0("logs/dataPrep",format(Sys.time(), "%Y-%m-%d_%H%M"),".log")
   cat(as.character(Sys.time()), file=fileName, append=T, sep = "\n")
 
-  cat(paste("\t \Time range \n"), file=fileName, append=T, sep = "\n")
+  cat(paste("\t Time range \n"), file=fileName, append=T, sep = "\n")
 
   range(db$date)
 
