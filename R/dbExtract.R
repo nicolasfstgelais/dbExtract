@@ -208,7 +208,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     if(i!=1)dbMerged=rbind(dbMerged,db)
 
   }
-  write.csv(dbMerged,paste0("data/",inputFile),row.names = F)
+  write.csv(dbMerged,paste0("data/dbExtract_",inputFile),row.names = F)
 }
 
 #' @export
