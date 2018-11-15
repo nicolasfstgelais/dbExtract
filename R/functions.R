@@ -26,21 +26,22 @@ completeGuidelines<-function(guide,db){
   }
   return(guide)}
 
+#' @export
 norm.units<-function(mat,conc="Concentration",units="Units")
 {
   mat[,units]=gsub("MILLIGRAM PER LITER","mg/L", mat[,units])
   mat[,units]=gsub("NANOGRAM PER LITER","ng/L", mat[,units])
   mat[,units]=gsub("MICROGRAM PER LITER","ug/L", mat[,units])
-  
+
   mat[,units]=gsub("µ","u", mat[,units])
-  
+
   mgL=grep("mg/L",mat[,units],ignore.case = T)
   ngL=grep("ng/L",mat[,units],ignore.case = T)
   mat[mgL,conc]=as.numeric(mat[mgL,conc])*1000
   mat[ngL,conc]=as.numeric(mat[ngL,conc])/1000
   mat[c(mgL,ngL),units]="ug/L"
-  
-  
+
+
   return(mat)
 }
 
@@ -48,9 +49,9 @@ norm.units<-function(mat,conc="Concentration",units="Units")
 #col="drink"
 create.edges<-function(mat,col)
 {
-  
+
   # mat=log10(mat)
-  
+
   #centrer reduire les donnees par pollutant
   matScaled=(cbind((mat),0))
   #matScaled= t(scale(rbind(t(mat),0),scale=T))
@@ -72,7 +73,10 @@ firstAsRowNames <- function(mat)
 
 
 # function to convert levels to numeric or characters
+#' @export
 LtoN <- function(x) {as.numeric(as.character(x))}
+
+#' @export
 LtoC <- function(x) {
   if(!is.null(dim(x))){
     for (i in 1:ncol(x)){

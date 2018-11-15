@@ -33,9 +33,9 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="dat
   cat(paste("\t \nBefore \n"), file=fileName, append=T, sep = "\n")
 
 
-  selVar=unique(db$variable)
+  selVar=unique(db$parameter)
   for(i in 1:length(selVar)){
-    un=(paste0(unique(db$units[grep(selVar[i],db$variable,ignore.case = T)]),collapse=","))
+    un=(paste0(unique(db$units[grep(selVar[i],db$parameter,ignore.case = T)]),collapse=","))
     cat(paste("\t",selVar[i],":", un), file=fileName, append=T, sep = "\n")
   }
 
@@ -46,7 +46,7 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="dat
   cat(paste("\t \nAfter\n"), file=fileName, append=T, sep = "\n")
 
   for(i in 1:length(selVar)){
-    un=(paste0(unique(db$units[grep(selVar[i],db$variable,ignore.case = T)]),collapse=","))
+    un=(paste0(unique(db$units[grep(selVar[i],db$parameter,ignore.case = T)]),collapse=","))
     cat(paste("\t",selVar[i],":", un), file=fileName, append=T, sep = "\n")
   }
 
@@ -58,11 +58,11 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="dat
 
 
 if(by=="ym"){
-  db_mean_ym<- plyr::ddply(db, c("station","ym","variable"), plyr::summarise,
+  db_mean_ym<- plyr::ddply(db, c("station","ym","parameter"), plyr::summarise,
                            value    = mean(value))
 
   db_wide<- tidyr::spread(data = db_mean_ym,
-                             key = variable,
+                             key = parameter,
                              value = value)
 
   rownames(db_wide)=paste0(db_wide$station,db_wide$ym)
@@ -70,11 +70,11 @@ if(by=="ym"){
 }
   if(by=="d"){
 
-  db_mean_d<- plyr::ddply(db, c("station","date","variable"), plyr::summarise,
+  db_mean_d<- plyr::ddply(db, c("station","date","parameter"), plyr::summarise,
                           value    = mean(value))
 
   db_wide<- tidyr::spread(data = db_mean_d,
-                            key = variable,
+                            key = parameter,
                             value = value)
 
   rownames(db_wide)=paste0(db_wide$station,db_wide$d)
@@ -83,10 +83,10 @@ if(by=="ym"){
 
   if(by=="m"){
 
-  db_mean_m<- plyr::ddply(cbind(db,mo), c("station","mo","variable"), plyr::summarise,
+  db_mean_m<- plyr::ddply(cbind(db,mo), c("station","mo","parameter"), plyr::summarise,
                           value    = mean(value))
   db_wide_m<- tidyr::spread(data = db_mean_m,
-                            key = variable,
+                            key = parameter,
                             value = value)
   rownames(db_wide)=paste0(db_wide$station,db_wide$m)
   db_wide=db_wide[,-c(1,2)]

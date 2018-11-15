@@ -1,10 +1,10 @@
 #' @export
-sitesClassification<-function(temporalPath="data/temporalDBwide.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"))
+sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="data/guidelinesNorm2.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"))
 {
   #load(paste0("data/dataPrep.RData"))
   db_wide=read.csv(temporalPath,header=T)
   selVar=colnames(db_wide)
-  guide= read.csv("data/guidelines_norm.csv")
+  guide= read.csv(guidePath)
 
   #-selSpaces=unique(guide$ES)
 
