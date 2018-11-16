@@ -4,7 +4,7 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
   #load(paste0("data/dataPrep.RData"))
   db_wide=read.csv(temporalPath,header=T)
   selVar=colnames(db_wide)
-  guide= read.csv(guidePath)
+  guide= read.csv(guidePath,stringsAsFactors = F)
 
   #-selSpaces=unique(guide$ES)
 
@@ -16,7 +16,7 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
   #load(paste0("data/sitesClass",selOut,".RData"))
 
 
-
+  if (file.exists("data/sitesClass.csv")) file.remove("data/sitesClass.csv")
 
   sitesClass=matrix(NA,nrow(db_wide),length(selSpaces),dimnames=list(rownames(db_wide),selSpaces))
   limFreqTable=matrix(0,length(selVar),length(selSpaces),dimnames=list(selVar,selSpaces))
@@ -36,7 +36,7 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
 
   db_wide=as.matrix(db_wide)
 
-  j="oligotrophic"
+  j="drink"
   for(j in selSpaces){
 
     # Initiate cluster
@@ -55,6 +55,7 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
     out=rep(NA,nrow(db_wide))
     names(out)=rownames(db_wide)
     #x <-foreach(i=rownames(db_wide), .combine='rbind',.options.snow = opts) %:%
+    m="fluoride"
     for(m in selVar){
       if(m==selVar[1])out=apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m]))
       if(m!=selVar[1])out=cbind(out,apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m],evalLim)))

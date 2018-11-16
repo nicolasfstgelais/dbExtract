@@ -1,5 +1,5 @@
 #' @export
-dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="data/guidelinesNorm2.csv",jurisdiction="world",temporalPath="data/dbExtract_temporalDB.csv",by="ym")
+dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/guidelinesNorm2.csv",jurisdiction="world",guide.year=2011,temporalPath="data/dbExtract_temporalDB.csv",by="ym")
 {
   ## Read files
   #source("R/functions.R")
@@ -12,6 +12,8 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="dat
 
   guide=read.csv(guidePath,stringsAsFactors=FALSE)
   guide=guide[grep(jurisdiction,guide$jurisdiction,ignore.case = T),]
+  guide=guide[guide$Date%in%guide.year,]
+
 
   ##Normalize datasets
   guide$Pollutant=tolower(guide$Pollutant)
