@@ -1,5 +1,5 @@
 #' @export
-sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="data/guidelinesNorm2.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"))
+sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="data/guidelines_norm.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"))
 {
   #load(paste0("data/dataPrep.RData"))
   db_wide=read.csv(temporalPath,header=T)

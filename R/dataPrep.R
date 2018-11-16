@@ -1,5 +1,6 @@
+# to add detect duplicated guidelines
 #' @export
-dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/guidelinesNorm2.csv",jurisdiction="world",guide.year=2011,temporalPath="data/dbExtract_temporalDB.csv",by="ym")
+dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/criteria/guidelinesNorm2.csv",jurisdiction="world",guide.year=NULL,temporalPath="data/dbExtract_temporalDB.csv",by="ym")
 {
   ## Read files
   #source("R/functions.R")
@@ -12,7 +13,7 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw
 
   guide=read.csv(guidePath,stringsAsFactors=FALSE)
   guide=guide[grep(jurisdiction,guide$jurisdiction,ignore.case = T),]
-  guide=guide[guide$Date%in%guide.year,]
+  if(length(guide.year)>0)guide=guide[guide$Date%in%guide.year,]
 
 
   ##Normalize datasets
