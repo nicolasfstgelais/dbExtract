@@ -12,7 +12,7 @@ dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw
   #-length(unique(stations$station))
 
   guide=read.csv(guidePath,stringsAsFactors=FALSE)
-  guide=guide[grep(jurisdiction,guide$jurisdiction,ignore.case = T),]
+  guide=guide[grep(jurisdiction,guide$jurisdiction,ignore.case = T,perl = T),]
   if(length(guide.year)>0)guide=guide[guide$Date%in%guide.year,]
 
 

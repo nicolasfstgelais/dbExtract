@@ -83,7 +83,7 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
 
 
     #-save(sitesClass,sitesClass_raw,critLim,file=paste0("data/sitesClass",selOut,".RData"))
-    write.csv(sitesClass,"data/sitesClass.csv")
+    write.csv(sitesClass,"data/sitesClass.csv",row.names = F)
 
     #-indic<-function(x)length(which(is.nan(x)))/(length(which(is.nan(x)))+(length(which(is.infinite(x)))))
 
