@@ -4,6 +4,7 @@ overlapES<-function(sitesClass,rd=2,type=1,perm=100)
 {
   incMatrix=matrix(NA,ncol(sitesClass),ncol(sitesClass),dimnames=list(colnames(sitesClass),colnames(sitesClass)))
   incMatrix_abs=matrix(NA,ncol(sitesClass),ncol(sitesClass),dimnames=list(colnames(sitesClass),colnames(sitesClass)))
+  incMatrix_abs_inv=matrix(NA,ncol(sitesClass),ncol(sitesClass),dimnames=list(colnames(sitesClass),colnames(sitesClass)))
 
   diff=matrix(NA,ncol(sitesClass),ncol(sitesClass),dimnames=list(colnames(sitesClass),colnames(sitesClass)))
   p=matrix(NA,ncol(sitesClass),ncol(sitesClass),dimnames=list(colnames(sitesClass),colnames(sitesClass)))
@@ -39,7 +40,5 @@ overlapES<-function(sitesClass,rd=2,type=1,perm=100)
   if(type==3)return(p)
   if(type==4)return(incMatrix_abs)
   if(type==5)return(incMatrix_abs_inv)
-
-
 }
 

@@ -36,40 +36,45 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
 
   db_wide=as.matrix(db_wide)
 
-  j="drink"
+  j="mesotrophic"
   for(j in selSpaces){
 
-    # Initiate cluster
-    # cl <- makeCluster(no_cores)
-    #registerDoSNOW(cl)
 
-    guideUpper=guide[guide$Pollutant%in%selVar&guide$ES==j&guide$Limit=="upper",c("Pollutant","Concentration")]
-    rn=guideUpper$Pollutant;guideUpper=unlist(guideUpper[,2]);names(guideUpper)=rn
+      guideUpper=guide[guide$Pollutant%in%selVar&guide$ES==j&guide$Limit=="upper",c("Pollutant","Concentration")]
+      rn=guideUpper$Pollutant;guideUpper=unlist(guideUpper[,2]);names(guideUpper)=rn
 
 
-    guideLower=guide[guide$Pollutant%in%selVar&guide$ES==j&guide$Limit=="lower",c("Pollutant","Concentration")]
-    rn=guideLower$Pollutant;guideLower=unlist(guideLower[,2]);names(guideLower)=rn
+      guideLower=guide[guide$Pollutant%in%selVar&guide$ES==j&guide$Limit=="lower",c("Pollutant","Concentration")]
+      rn=guideLower$Pollutant;guideLower=unlist(guideLower[,2]);names(guideLower)=rn
 
 
 
-    out=rep(NA,nrow(db_wide))
-    names(out)=rownames(db_wide)
-    #x <-foreach(i=rownames(db_wide), .combine='rbind',.options.snow = opts) %:%
-    m="fluoride"
-    for(m in selVar){
-      if(m==selVar[1])out=apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m]))
-      if(m!=selVar[1])out=cbind(out,apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m],evalLim)))
-    }
-    colnames(out)=selVar
+      out=rep(NA,nrow(db_wide))
+      names(out)=rownames(db_wide)
+      #x <-foreach(i=rownames(db_wide), .combine='rbind',.options.snow = opts) %:%
+      m="tp"
+      db_wide[596,"tp",drop=F]
+      db_wide[596,"tn",drop=F]
+      for(m in selVar){
+        if(m==selVar[1])out=apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m]))
+        if(m!=selVar[1])out=cbind(out,apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m],evalLim)))
+      }
+      colnames(out)=selVar
+    #meso=out[596,]
 
     sitesClass_raw[[j]]=out
+
+    out_colap=matrix(do.call(paste0, as.data.frame(out)))
+
 
     if(file.exists(paste0("data/sitesClass.csv"))){
       sitesClass=read.csv("data/sitesClass.csv")
     }
     if(j%in%colnames(sitesClass))
     {
-      sitesClass[,j]=apply(out,1,min,na.rm=T)
+      sitesClass[grepl(pattern = "u" ,out_colap),j]=0
+      sitesClass[grepl(pattern = "w" ,out_colap),j]=1
+      sitesClass[grepl(pattern = "o" ,out_colap),j]=0
       sitesClass[is.infinite(as.matrix(sitesClass))]=NA
 
     }
@@ -77,6 +82,9 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
     {
       sitesClass=cbind(sitesClass,apply(out,1,min,na.rm=T))
       colnames(sitesClass)[ncol(sitesClass)]=j
+      sitesClass[grepl(pattern = "u" ,out_colap),j]=0
+      sitesClass[grepl(pattern = "w" ,out_colap),j]=1
+      sitesClass[grepl(pattern = "o" ,out_colap),j]=0
       sitesClass[is.infinite(sitesClass)]=NA
     }
 
@@ -87,8 +95,8 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
 
     #-indic<-function(x)length(which(is.nan(x)))/(length(which(is.nan(x)))+(length(which(is.infinite(x)))))
 
-    measFreqF<-function(x)(length(which(x==1))+length(which(x==0)))/length(x)
-    limFreqF<-function(x)length(which(x==0))/(length(which(x==1))+length(which(x==0)))
+    measFreqF<-function(x)(length(which(!is.na(x))))/length(x)
+    limFreqF<-function(x)length(grep("o|u",x))/(length(which(!is.na(x))))
     temp.measFreq=apply(sitesClass_raw[[j]],2,measFreqF)
     temp.limFreq=apply(sitesClass_raw[[j]],2,limFreqF)
 
@@ -102,7 +110,7 @@ sitesClassification<-function(temporalPath="data/temporalDBwide.csv",guidePath="
     print(j)
   }
 
-  write.csv(sitesClass_raw,"data/sitesClass_raw.csv")
+  #write.csv(sitesClass_raw,"data/sitesClass_raw.csv")
   write.csv(measFreq,"data/measFreq.csv")
   write.csv(limFreq,"data/limFreq.csv")
 
@@ -121,16 +129,9 @@ evalLim<-function(env, upper,lower){
   if(is.na(upper))upper=Inf
   if(is.na(lower))lower=0
 
-  if(env<upper){incUp=min(incUp,1,na.rm = T)}
-  if(env<lower){
-    incLow=max(incLow,0,na.rm = T)
-  }
-  if(env>=upper){
-    incUp=min(incUp,0,na.rm = T)
-  }
-  if(env>=lower){incLow=max(incLow,1,na.rm = T)}
+  if(env<upper&env>=lower){out="w"}
+  if(env<lower){out="u"}
+  if(env>=upper){out="o"}
 
-
-  min=min(incUp,incLow)
-  return(min)
+  return(out)
 }
