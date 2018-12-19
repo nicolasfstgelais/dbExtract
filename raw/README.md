@@ -1,4 +1,4 @@
-#HOW TO ADD A NEW DATABASE:
+## HOW TO ADD A NEW DATABASE:
 
 1. Each new database should be added in raw/riverData. Databases can be organized in sub-folders to better orgnize files.
 2. Each data daseshould be checked to make sure that the following minimal criteria are meet. Is some cleaning is needed, we 
