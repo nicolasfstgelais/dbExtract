@@ -24,7 +24,7 @@
 If thedirectory where you want to initialize dbExtract is different from the working directory, change the working directory using `setwd(path)`. We highly recommand to run all the *dbExtract* functions from a R project created within the working directory. 
 
 ## Add a dataset 
-Datasets should be added in the raw folder ((see [data README](https://github.com/nicolasfstgelais/dbExtract/blob/master/raw/README.md) for details)
+Datasets should be added in the raw folder (see [data README](https://github.com/nicolasfstgelais/dbExtract/blob/master/raw/README.md) for details)
 
 
 
