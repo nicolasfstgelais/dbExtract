@@ -128,7 +128,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
 
 
     rowSel=NULL
-    j="dicamba"
+    j="cadmium"
     for (j in cats) {
       # loop to search for the kerwords in order, maybe switch from | to  ; between keywords
 
@@ -167,6 +167,9 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
 
       cat(paste("\t",j,":",pattList[r]), file=fileName, append=T, sep = "\n")
       cat(paste("\t\t",searchVec[colsTemp]), file=fileName, append=T, sep = "\n")
+      cat(paste("\t\t",range(as.numeric(db[rowSel,input$values[i]]),na.rm = T)), file=fileName, append=T, sep = "\n")
+      cat(paste("\t\t",mean(as.numeric(db[rowSel,input$values[i]]),na.rm = T)), file=fileName, append=T, sep = "\n")
+
     }
 
     #select only relevant rows
@@ -200,8 +203,8 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     #-if(length(lat)>0)colnames(db)[lat]="lat"
     #-if(length(long)>0)colnames(db)[long]="long"
 
-    if(!is.na(input$units[i])){
-    db=norm.units(mat=db,conc ="value",units = "units")}
+   # if(!is.na(input$units[i])){
+    #db=norm.units(mat=db,conc ="value",units = "units")}
 
    db=db[,colnames(db)%in%c("station","date","parameter",'value',"units","ym")]
     db=  db[,order(colnames(db))]

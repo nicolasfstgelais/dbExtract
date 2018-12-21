@@ -1,25 +1,11 @@
-# to add detect duplicated guidelines
+
 #' @export
-dataPrep <- function(stationsPath="data/dbExtract_stationsDB.csv",guidePath="raw/criteria/guidelinesNorm2.csv",jurisdiction="world",guide.year=NULL,temporalPath="data/dbExtract_temporalDB.csv",by="ym")
+transform.temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym")
 {
   ## Read files
-  #source("R/functions.R")
   db=read.csv(temporalPath,stringsAsFactors = F)
 
-  #-stations=read.csv(stationsPath,stringsAsFactors = F,row.names = 1)
   stations=read.csv(stationsPath,stringsAsFactors = F)
-  #-stations[which(duplicated(stations$station)),]
-  #-length(unique(stations$station))
-
-  guide=read.csv(guidePath,stringsAsFactors=FALSE)
-  guide=guide[grep(jurisdiction,guide$jurisdiction,ignore.case = T,perl = T),]
-  if(length(guide.year)>0)guide=guide[guide$Date%in%guide.year,]
-
-
-  ##Normalize datasets
-  guide$Pollutant=tolower(guide$Pollutant)
-  guide$Pollutant=gsub(" ","",guide$Pollutant)
-  guide=norm.units(guide)
 
   ##Check units  (add to a log)
 
@@ -72,7 +58,6 @@ if(by=="ym"){
   db_wide=db_wide[,-c(1,2)]
 }
   if(by=="d"){
-
   db_mean_d<- plyr::ddply(db, c("station","date","parameter"), plyr::summarise,
                           value    = mean(value))
 
@@ -85,7 +70,6 @@ if(by=="ym"){
   }
 
   if(by=="m"){
-
   db_mean_m<- plyr::ddply(cbind(db,mo), c("station","mo","parameter"), plyr::summarise,
                           value    = mean(value))
   db_wide_m<- tidyr::spread(data = db_mean_m,
@@ -95,25 +79,8 @@ if(by=="ym"){
   db_wide=db_wide[,-c(1,2)]
 }
 
-
-
-  #-sites=unique(stringr::str_sub(rownames(db_wide),start=0,end=-7))
-
-  #-location=matrix(NA,length(sites),2,dimnames=list(sites,c("long","lat")))
-
-  #-for(i in rownames(location))
-  #-{
-    #-if(length(stations[stations$station==i,"latitude"])==0)next
-    #-location[i,"lat"]=stations[stations$station==i,"latitude"]
-    #-location[i,"long"]=stations[stations$station==i,"longitude"]
-  #-}
-#-  location=as.data.frame(location)
-
  write.csv(db_wide,"data/temporalDBwide.csv",row.names = F)
- write.csv(guide,"data/guidelines_norm.csv",row.names = F)
 
-
-  #save(db_wide_m,db_wide_d,db_wide_ym,stations,guide,location,file=paste0("data/dataPrep.RData"))
 }
 
 
