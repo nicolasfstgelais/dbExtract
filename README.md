@@ -23,6 +23,11 @@
 `dbExtract()` is based on a specific structure of files to initialize (with examples) the folder structure run the `dbExtract_init()`.
 If thedirectory where you want to initialize dbExtract is different from the working directory, change the working directory using `setwd(path)`. We highly recommand to run all the *dbExtract* functions from a R project created within the working directory. 
 
+## Add a dataset 
+Datasets should be added in the raw folder (see [data README](https://github.com/nicolasfstgelais/dbExtract/blob/master/raw/README.md) for details)
+
+
+
 ## Extract and merge data
 `dbExtract()` can be use to extract and merge data from multiple locations, coming from multiple databases. The `dbExtract()` function look for specifc keywords in each database (in wide or long format) based on the keyword in *raw/inputs/categories.csv* (see [input README](https://github.com/nicolasfstgelais/dbExtract/blob/master/raw/inputs/README.md) for details on how to fill the categories file).
 
