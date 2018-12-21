@@ -3,7 +3,7 @@
 #select guidelines in tansformES
 #' @export
 
-transform.guidelines <- function(guidePath="raw/criteria/guidelinesNorm2.csv")
+transform_guidelines <- function(guidePath="raw/criteria/guidelinesNorm2.csv")
 {
   
   guide=read.csv(guidePath,stringsAsFactors=FALSE)

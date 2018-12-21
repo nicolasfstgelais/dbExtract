@@ -1,6 +1,6 @@
 
 #' @export
-transform.temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym")
+transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym")
 {
   ## Read files
   db=read.csv(temporalPath,stringsAsFactors = F)
