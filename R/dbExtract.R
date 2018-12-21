@@ -10,7 +10,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
   #input categories to identified should also be a csv
   categories = LtoC(read.csv(paste0("raw/inputs/",catFile),na.strings = ""))
 
-  i=1
+  i=3
 
   for(i in 1:nrow(input)){
 
@@ -31,6 +31,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     #log input
     fileName=paste0("logs/",as.character(Sys.Date()),".log")
     cat(as.character(Sys.time()), file=fileName, append=T, sep = "\n")
+    cat(as.character(input[i,"path"]), file=fileName, append=T, sep = "\n")
 
 
     time=gsub(" EDT","",gsub(" ","_",Sys.time()))
@@ -95,7 +96,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     }
 
     # transfo from long to wide
-
+    if(!is.null(input$location))db$location_inherited=input[i,]$location
 
     j = "doc"
 
@@ -174,7 +175,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     db=db[(db[,input$values[i]])!="ND",]
 
 
-    db=db[db[,input$values[i]]>0,]
+    #db=db[db[,input$values[i]]>0,]
 
 
     #norm colnames
@@ -183,6 +184,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     colnames(db)[which(colnames(db)==input$parameters[i])]="parameter"
     colnames(db)[which(colnames(db)==input$values[i])]="value"
     colnames(db)[which(colnames(db)==input$stationID[i])]="station"
+
 
 
 
