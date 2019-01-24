@@ -1,5 +1,5 @@
 #' @export
-extract_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath="data/temporalDBwide.csv",guidePath="data/guidelines_norm.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"),jurisdiction="Canada",guide.year=NULL)
+load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath="data/temporalDBwide.csv",guidePath="data/guidelines_norm.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"),jurisdiction="Canada",guide.year=NULL)
 {
 
   db_wide=read.csv(temporal_widePath,header=T,stringsAsFactors = F,row.names=1)
@@ -17,7 +17,7 @@ extract_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePa
 
   #select guidelines
   stations.sel=stations[which(stations[stations$parameter=="location","value"]=="Canada"),"station"]
-  db_wide=db_wide[(stringr::str_sub(rownames(db_wide), 0, -7)%in%stations.sel),]
+  db_wide=db_wide[(stringr::str_sub(rownames(db_wide), 0, -9)%in%stations$station),]
 
 
   #-selSpaces=unique(guide$ES)
@@ -50,7 +50,7 @@ extract_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePa
 
   db_wide=as.matrix(db_wide)
 
-  j="mesotrophic"
+  j="recreational"
   for(j in selSpaces){
 
 
@@ -66,9 +66,6 @@ extract_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePa
       out=rep(NA,nrow(db_wide))
       names(out)=rownames(db_wide)
       #x <-foreach(i=rownames(db_wide), .combine='rbind',.options.snow = opts) %:%
-      m="tp"
-      db_wide[596,"tp",drop=F]
-      db_wide[596,"tn",drop=F]
       for(m in selVar){
         if(m==selVar[1])out=apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m]))
         if(m!=selVar[1])out=cbind(out,apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m],evalLim)))
@@ -105,7 +102,7 @@ extract_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePa
 
 
     #-save(sitesClass,sitesClass_raw,critLim,file=paste0("data/sitesClass",selOut,".RData"))
-    write.csv(sitesClass,"data/sitesClass.csv",row.names = F)
+    write.csv(sitesClass,"data/sitesClass.csv",row.names = T)
 
     #-indic<-function(x)length(which(is.nan(x)))/(length(which(is.nan(x)))+(length(which(is.infinite(x)))))
 

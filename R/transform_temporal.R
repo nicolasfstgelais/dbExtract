@@ -4,7 +4,6 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
 {
   ## Read files
   db=read.csv(temporalPath,stringsAsFactors = F)
-
   stations=read.csv(stationsPath,stringsAsFactors = F)
 
   ##Check units  (add to a log)
@@ -44,7 +43,19 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
 
   mo=LtoN(stringr::str_sub(db$ym, start= -2))
   mo=formatC(mo, width = 2, format = "d", flag = "0")
+ db$y=lubridate::year(db$date)
 
+ if(by=="y"){
+   db_mean_y<- plyr::ddply(db, c("station","y","parameter"), plyr::summarise,
+                            value    = mean(value))
+
+   db_wide<- tidyr::spread(data = db_mean_y,
+                           key = parameter,
+                           value = value)
+
+   rownames(db_wide)=paste0(db_wide$station,db_wide$y,"0000")
+   db_wide=db_wide[,-c(1,2)]
+ }
 
 if(by=="ym"){
   db_mean_ym<- plyr::ddply(db, c("station","ym","parameter"), plyr::summarise,
@@ -54,7 +65,7 @@ if(by=="ym"){
                              key = parameter,
                              value = value)
 
-  rownames(db_wide)=paste0(db_wide$station,db_wide$ym)
+  rownames(db_wide)=paste0(db_wide$station,db_wide$ym,"00")
   db_wide=db_wide[,-c(1,2)]
 }
   if(by=="d"){
@@ -79,7 +90,7 @@ if(by=="ym"){
   db_wide=db_wide[,-c(1,2)]
 }
 
- write.csv(db_wide,"data/temporalDBwide.csv",row.names = F)
+ write.csv(db_wide,paste0("data/transform_temporal_",by,".csv"))
 
 }
 

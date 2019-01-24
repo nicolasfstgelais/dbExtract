@@ -10,4 +10,5 @@ LazyData: true
 RoxygenNote: 6.1.0
 Imports:
     RCurl,
-    tidyr
+    tidyr,
+    stringr,
