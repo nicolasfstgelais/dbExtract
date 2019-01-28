@@ -65,6 +65,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
       out=rep(NA,nrow(db_wide))
       names(out)=rownames(db_wide)
+      m="secchi"
       #x <-foreach(i=rownames(db_wide), .combine='rbind',.options.snow = opts) %:%
       for(m in selVar){
         if(m==selVar[1])out=apply(db_wide[,m,drop=F],1,evalLim,upper=as.numeric(guideUpper[m]),lower=as.numeric(guideLower[m]))
@@ -83,18 +84,17 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
     }
     if(j%in%colnames(sitesClass))
     {
-      sitesClass[grepl(pattern = "u" ,out_colap),j]=0
       sitesClass[grepl(pattern = "w" ,out_colap),j]=1
+      sitesClass[grepl(pattern = "u" ,out_colap),j]=0
       sitesClass[grepl(pattern = "o" ,out_colap),j]=0
       sitesClass[is.infinite(as.matrix(sitesClass))]=NA
-
     }
     if(!j%in%colnames(sitesClass))
     {
       sitesClass=cbind(sitesClass,apply(out,1,min,na.rm=T))
       colnames(sitesClass)[ncol(sitesClass)]=j
-      sitesClass[grepl(pattern = "u" ,out_colap),j]=0
       sitesClass[grepl(pattern = "w" ,out_colap),j]=1
+      sitesClass[grepl(pattern = "u" ,out_colap),j]=0
       sitesClass[grepl(pattern = "o" ,out_colap),j]=0
       sitesClass[is.infinite(sitesClass)]=NA
     }
@@ -146,3 +146,5 @@ evalLim<-function(env, upper,lower){
 
   return(out)
 }
+
+
