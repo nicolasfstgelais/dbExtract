@@ -1,6 +1,6 @@
 
 #' @export
-transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym")
+transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym",outputFile="data/processed/dbExtract_output.csv")
 {
   ## Read files
   db=read.csv(temporalPath,stringsAsFactors = F)
@@ -90,7 +90,7 @@ if(by=="ym"){
   db_wide=db_wide[,-c(1,2)]
 }
 
- write.csv(db_wide,paste0("data/transform_temporal_",by,".csv"))
+ write.csv(db_wide,outputFile)
 
 }
 

@@ -1,14 +1,14 @@
 #' @export
-dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
+dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs/categories.csv",outputFile="dbExtract_output")
 {
 
   # inputs----
 
   # input
-  input = LtoC(read.csv(paste0("raw/inputs/",inputFile),na.strings = ""))
+  input = LtoC(read.csv(inputFile,na.strings = ""))
 
   #input categories to identified should also be a csv
-  categories = LtoC(read.csv(paste0("raw/inputs/",catFile),na.strings = ""))
+  categories = LtoC(read.csv(catFile,na.strings = ""))
 
   i=3
 
@@ -213,7 +213,7 @@ dbExtract<- function(inputFile = "stationsDB.csv",catFile="categories.csv")
     if(i!=1)dbMerged=rbind(dbMerged,db)
 
   }
-  write.csv(dbMerged,paste0("data/dbExtract_",inputFile),row.names = F)
+  write.csv(dbMerged,outputFile,row.names = F)
 }
 
 #' @export

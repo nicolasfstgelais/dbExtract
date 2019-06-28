@@ -1,5 +1,5 @@
 #' @export
-load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath="data/temporalDBwide.csv",guidePath="data/guidelines_norm.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"),jurisdiction="Canada",guide.year=NULL)
+load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath="data/temporalDBwide.csv",guidePath="data/guidelines_norm.csv",selSpaces=c("irrigation","livestock","drink","aquatic","recreational","oligotrophic","mesotrophic","eutrophic"),jurisdiction="Canada",guide.year=NULL,outputPath="data/processed")
 {
 
   db_wide=read.csv(temporal_widePath,header=T,stringsAsFactors = F,row.names=1)
@@ -30,7 +30,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
   #load(paste0("data/sitesClass",selOut,".RData"))
 
 
-  if (file.exists("data/sitesClass.csv")) file.remove("data/sitesClass.csv")
+  if (file.exists(paste0(outputPath,"/sitesClass.csv"))) file.remove(paste0(outputPath,"/sitesClass.csv"))
 
   sitesClass=matrix(NA,nrow(db_wide),length(selSpaces),dimnames=list(rownames(db_wide),selSpaces))
   limFreqTable=matrix(0,length(selVar),length(selSpaces),dimnames=list(selVar,selSpaces))
@@ -50,7 +50,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
   db_wide=as.matrix(db_wide)
 
-  j="recreational"
+  j="aquatic"
   for(j in selSpaces){
 
 
@@ -79,8 +79,8 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
     out_colap=matrix(do.call(paste0, as.data.frame(out)))
 
 
-    if(file.exists(paste0("data/sitesClass.csv"))){
-      sitesClass=read.csv("data/sitesClass.csv")
+    if(file.exists(paste0(outputPath,"/sitesClass.csv"))){
+      sitesClass=read.csv(paste0(outputPath,"/sitesClass.csv"),row.names=1)
     }
     if(j%in%colnames(sitesClass))
     {
@@ -102,7 +102,12 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
 
     #-save(sitesClass,sitesClass_raw,critLim,file=paste0("data/sitesClass",selOut,".RData"))
-    write.csv(sitesClass,"data/sitesClass.csv",row.names = T)
+    if(!file.exists(paste0(outputPath,"/sitesClass.csv"))){
+      write.csv(sitesClass,paste0(outputPath,"/sitesClass.csv"),row.names = T )
+    }
+    if(file.exists(paste0(outputPath,"/sitesClass.csv"))){
+      write.csv(sitesClass,paste0(outputPath,"/sitesClass.csv"),row.names = T )
+    }
 
     #-indic<-function(x)length(which(is.nan(x)))/(length(which(is.nan(x)))+(length(which(is.infinite(x)))))
 
@@ -121,9 +126,10 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
     print(j)
   }
 
+  save(sitesClass_raw, file = paste0(outputPath,"/sitesClass_raw"))
   #write.csv(sitesClass_raw,"data/sitesClass_raw.csv")
-  write.csv(measFreq,"data/measFreq.csv")
-  write.csv(limFreq,"data/limFreq.csv")
+  write.csv(measFreq,paste0(outputPath,"/measFreq.csv"))
+  write.csv(limFreq,paste0(outputPath,"/limFreq.csv"))
 
 }
 
