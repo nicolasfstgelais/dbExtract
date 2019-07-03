@@ -7,6 +7,9 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
   stations=read.csv(stationsPath,stringsAsFactors = F)
 
   ##Check units  (add to a log)
+  #guide$Pollutant=tolower(guide$Pollutant)
+  #guide$Pollutant=gsub(" ","",guide$Pollutant)
+  #guide=norm.units(guide)
 
   #log input
   fileName=paste0("logs/dataPrep",format(Sys.time(), "%Y-%m-%d_%H%M"),".log")
@@ -95,3 +98,26 @@ if(by=="ym"){
 }
 
 
+norm.units<-function(mat,conc="Concentration",units="Units")
+{
+  mat[,units]=gsub("MILLIGRAM PER LITER","mg/L", mat[,units])
+  mat[,units]=gsub("NANOGRAM PER LITER","ng/L", mat[,units])
+  mat[,units]=gsub("MICROGRAM PER LITER","ug/L", mat[,units])
+
+  mat[,units]=gsub("µ","u", mat[,units])
+
+  mgL=grep("mg/L",mat[,units],ignore.case = T)
+  ngL=grep("ng/L",mat[,units],ignore.case = T)
+  mat[mgL,conc]=as.numeric(mat[mgL,conc])*1000
+  mat[ngL,conc]=as.numeric(mat[ngL,conc])/1000
+  ugL=grep("ug/L",mat[,units],ignore.case = T)
+
+  mat[c(mgL,ngL,ugL),units]="ug/L"
+
+  fileName=paste0("logs/normUnits",format(Sys.time(), "%Y-%m-%d"),".log")
+  cat(as.character(Sys.time()), file=fileName, append=T, sep = "\n")
+  cat(as.character(unique(mat[,units])), file=fileName, append=T, sep = "\n")
+
+
+  return(mat)
+}

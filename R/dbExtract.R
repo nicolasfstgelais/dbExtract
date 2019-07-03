@@ -4,13 +4,12 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
 
   # inputs----
 
-  # input
   input = LtoC(read.csv(inputFile,na.strings = ""))
 
   #input categories to identified should also be a csv
   categories = LtoC(read.csv(catFile,na.strings = ""))
 
-  i=3
+  i=1
 
   for(i in 1:nrow(input)){
 
@@ -188,6 +187,7 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
     colnames(db)[which(colnames(db)==input$values[i])]="value"
     colnames(db)[which(colnames(db)==input$stationID[i])]="station"
 
+    db$path=input$path[i]
 
 
 
@@ -204,9 +204,12 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
     #-if(length(long)>0)colnames(db)[long]="long"
 
    # if(!is.na(input$units[i])){
-    #db=norm.units(mat=db,conc ="value",units = "units")}
 
-   db=db[,colnames(db)%in%c("station","date","parameter",'value',"units","ym")]
+
+   db=db[,colnames(db)%in%c("station","date","parameter",'value',"units","ym","path")]
+
+   db=norm.units(mat=db,conc ="value",units = "units")
+
     db=  db[,order(colnames(db))]
 
    if(i==1)dbMerged=db
