@@ -59,7 +59,7 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
 
 if(by=="ym"){
   db_mean_ym<- plyr::ddply(db, c("station","ym","parameter"), plyr::summarise,
-                           value    = mean(value))
+                           value    = mean(as.numeric(as.character(value))))
 
   db_wide<- tidyr::spread(data = db_mean_ym,
                              key = parameter,

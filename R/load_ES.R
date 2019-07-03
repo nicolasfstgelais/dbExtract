@@ -50,7 +50,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
   db_wide=as.matrix(db_wide)
 
-  j="aquatic"
+  j="oligotrophic"
   for(j in selSpaces){
 
 
