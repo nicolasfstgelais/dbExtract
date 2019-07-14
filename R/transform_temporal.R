@@ -98,7 +98,7 @@ if(by=="ym"){
 }
 
 
-norm.units<-function(mat,conc="Concentration",units="Units")
+norm.units<-function(mat,conc="value",units="units")
 {
   mat[,units]=gsub("MILLIGRAM PER LITER","mg/L", mat[,units])
   mat[,units]=gsub("NANOGRAM PER LITER","ng/L", mat[,units])

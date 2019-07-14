@@ -50,7 +50,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
   db_wide=as.matrix(db_wide)
 
-  j="oligotrophic"
+  j="drink"
   for(j in selSpaces){
 
 
@@ -153,4 +153,6 @@ evalLim<-function(env, upper,lower){
   return(out)
 }
 
+measFreqF<-function(x)(length(which(!is.na(x))))/length(x)
+limFreqF<-function(x)length(grep("o|u",x))/(length(which(!is.na(x))))
 

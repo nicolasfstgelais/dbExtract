@@ -9,7 +9,7 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
   #input categories to identified should also be a csv
   categories = LtoC(read.csv(catFile,na.strings = ""))
 
-  i=1
+  i=25
 
   for(i in 1:nrow(input)){
 
@@ -208,7 +208,12 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
 
    db=db[,colnames(db)%in%c("station","date","parameter",'value',"units","ym","path")]
 
-   db=norm.units(mat=db,conc ="value",units = "units")
+   if("units"%in%colnames(db)){
+   db=norm.units(mat=db,conc ="value",units = "units")}
+
+   # set negative  alues to zero, not sure if best approach or flag obs
+
+   db[db$value<0,"value"]=0
 
     db=  db[,order(colnames(db))]
 
