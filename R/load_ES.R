@@ -50,7 +50,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
   db_wide=as.matrix(db_wide)
 
-  j="drink"
+  j="mesotrophic"
   for(j in selSpaces){
 
 
@@ -84,8 +84,8 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
     }
     if(j%in%colnames(sitesClass))
     {
-      sitesClass[grepl(pattern = "w" ,out_colap),j]=1
       sitesClass[grepl(pattern = "u" ,out_colap),j]=0
+      sitesClass[grepl(pattern = "w" ,out_colap),j]=1
       sitesClass[grepl(pattern = "o" ,out_colap),j]=0
       sitesClass[is.infinite(as.matrix(sitesClass))]=NA
     }
@@ -93,8 +93,8 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
     {
       sitesClass=cbind(sitesClass,apply(out,1,min,na.rm=T))
       colnames(sitesClass)[ncol(sitesClass)]=j
-      sitesClass[grepl(pattern = "w" ,out_colap),j]=1
       sitesClass[grepl(pattern = "u" ,out_colap),j]=0
+      sitesClass[grepl(pattern = "w" ,out_colap),j]=1
       sitesClass[grepl(pattern = "o" ,out_colap),j]=0
       sitesClass[is.infinite(sitesClass)]=NA
     }
@@ -113,7 +113,7 @@ load_ES<-function(stationPath="data/dbExtract_stationsDB.csv",temporal_widePath=
 
     measFreqF<-function(x)(length(which(!is.na(x))))/length(x)
     limFreqF<-function(x)length(grep("o|u",x))/(length(which(!is.na(x))))
-    temp.measFreq=apply(sitesClass_raw[[j]],2,measFreqF)
+      temp.measFreq=apply(sitesClass_raw[[j]],2,measFreqF)
     temp.limFreq=apply(sitesClass_raw[[j]],2,limFreqF)
 
 
@@ -156,3 +156,8 @@ evalLim<-function(env, upper,lower){
 measFreqF<-function(x)(length(which(!is.na(x))))/length(x)
 limFreqF<-function(x)length(grep("o|u",x))/(length(which(!is.na(x))))
 
+db_wide_ym[db_wide_ym$X=="1000010030220130900",]
+sitesClass["1000010030220130900",]
+sitesClass_raw$eutrophic["1000010030220130900",]
+which(sitesClass$oligotrophic==0,sitesClass$mesotrophic==0,sitesClass$eutrophic==0)
+out[1203,]
