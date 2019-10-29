@@ -73,14 +73,14 @@ if(by=="ym"){
 }
 
  if(by=="ymd"){
-   db_mean_ym<- plyr::ddply(db, c("station","date","parameter"), plyr::summarise,
+   db_mean_ymd<- plyr::ddply(db, c("station","date","parameter"), plyr::summarise,
                             value    = mean(as.numeric(as.character(value))))
 
-   db_wide<- tidyr::spread(data = db_mean_ym,
+   db_wide<- tidyr::spread(data = db_mean_ymd,
                            key = parameter,
                            value = value)
 
-   rownames(db_wide)=paste0(db_wide$station,db_wide$ym,"00")
+   rownames(db_wide)=paste(db_wide$station,db_wide$date,sep="-")
    db_wide=db_wide[,-c(1,2)]
  }
   if(by=="d"){
