@@ -49,15 +49,16 @@ transform_temporal <- function(temporalPath="data/dbExtract_temporalDB.csv",by="
   db$y=lubridate::year(db$date)}
 
   if(by=="station"){
-    db_mean<- plyr::ddply(db, c("station","parameter"), plyr::summarise,
-                            value    = mean(value))
-
+    #db_mean<- plyr::ddply(db, c("station","parameter"), plyr::summarise,
+                            #value    = mean(value))
+    db[,"path"]=NULL
     db_wide<- tidyr::spread(data = db,
                             key = parameter,
                             value = value)
 
-    rownames(db_wide)=paste0(db_wide$station,db_wide$y,"0000")
-    db_wide=db_wide[,-c(1,2)]
+
+    #rownames(db_wide)=paste0(db_wide$station,db_wide$y,"0000")
+    #db_wide=db_wide[,-c(1,2)]
   }
 
   if(by=="ym"){
