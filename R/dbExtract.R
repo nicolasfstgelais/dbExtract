@@ -9,7 +9,7 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
   #input categories to identified should also be a csv
   categories = LtoC(read.csv(catFile,na.strings = ""))
 
-  i=25
+  i=7
 
   for(i in 1:nrow(input)){
 
@@ -95,7 +95,7 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
     }
 
     # transfo from long to wide
-    if(!is.null(input$location))db$location_inherited=input[i,]$location
+    #if(!is.null(input$location))db$location_inherited=input[i,]$location
 
     j = "doc"
 
@@ -111,7 +111,7 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
       searchVec=LtoC(unique(db[,LtoC(input$parameters[i])]))
     }
     if(is.na(input[i, "parameters"])){
-      cs=colnames(db)[!colnames(db)%in%input$stationID[i]]
+      cs=colnames(db)[!colnames(db)%in%c(input$stationID[i],input$dateID[i],"ym")]
       db=tidyr::gather_(db, "parameter","value", cs)
       input[i, "parameters"]="parameter"
       input$values[i]="value"
@@ -211,9 +211,14 @@ dbExtract<- function(inputFile = "raw/inputs/stationsDB.csv",catFile="raw/inputs
    if("units"%in%colnames(db)){
    db=norm.units(mat=db,conc ="value",units = "units")}
 
-   # set negative  alues to zero, not sure if best approach or flag obs
+   # if no units, especially when in wide format, but there is a date, add unit column with NA
+   if(!"units"%in%colnames(db)&"date"%in%colnames(db)){
+     db$units=NA}
 
-   db[db$value<0,"value"]=0
+   # set negative  alues to zero, not sure if best approach or flag obs_remove not good
+   # for longitude, better log would be better
+
+   #db[db$value<0,"value"]=0
 
     db=  db[,order(colnames(db))]
 
