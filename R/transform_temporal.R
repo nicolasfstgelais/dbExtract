@@ -1,10 +1,10 @@
 
 #' @export
-transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temporalPath="data/dbExtract_temporalDB.csv",by="ym",outputFile="data/processed/dbExtract_output.csv")
+transform_temporal <- function(temporalPath="data/dbExtract_temporalDB.csv",by="ym",outputFile="data/processed/dbExtract_output.csv")
 {
   ## Read files
   db=read.csv(temporalPath,stringsAsFactors = F)
-  stations=read.csv(stationsPath,stringsAsFactors = F)
+  #stations=read.csv(stationsPath,stringsAsFactors = F)
 
   ##Check units  (add to a log)
   #guide$Pollutant=tolower(guide$Pollutant)
@@ -17,7 +17,7 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
 
   cat(paste("\t Time range \n"), file=fileName, append=T, sep = "\n")
 
-  range(db$date)
+  #range(db$date)
 
   cat(paste("\t \nBefore \n"), file=fileName, append=T, sep = "\n")
 
@@ -30,7 +30,7 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
     cat(paste("\t",selVar[i],":", un), file=fileName, append=T, sep = "\n")
   }
 
-
+  if(by!="station"){
   ##Remove undersired units (add to a log)
   db=db[grep("ug/g",db$units,ignore.case = T,invert = T),]
 
@@ -46,7 +46,32 @@ transform_temporal <- function(stationsPath="data/dbExtract_stationsDB.csv",temp
 
   mo=LtoN(stringr::str_sub(db$ym, start= -2))
   mo=formatC(mo, width = 2, format = "d", flag = "0")
- db$y=lubridate::year(db$date)
+  db$y=lubridate::year(db$date)}
+
+  if(by=="station"){
+    db_mean<- plyr::ddply(db, c("station","parameter"), plyr::summarise,
+                            value    = mean(value))
+
+    db_wide<- tidyr::spread(data = db,
+                            key = parameter,
+                            value = value)
+
+    rownames(db_wide)=paste0(db_wide$station,db_wide$y,"0000")
+    db_wide=db_wide[,-c(1,2)]
+  }
+
+  if(by=="ym"){
+    db_mean_ym<- plyr::ddply(db, c("station","ym","parameter"), plyr::summarise,
+                             value    = mean(as.numeric(as.character(value))))
+
+    db_wide<- tidyr::spread(data = db_mean_ym,
+                            key = parameter,
+                            value = value)
+
+    rownames(db_wide)=paste0(db_wide$station,db_wide$ym,"00")
+    db_wide=db_wide[,-c(1,2)]
+  }
+
 
  if(by=="y"){
    db_mean_y<- plyr::ddply(db, c("station","y","parameter"), plyr::summarise,
